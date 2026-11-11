@@ -17,9 +17,19 @@
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <!-- Google Fonts -->
+    <!-- DNS-Prefetch & Preconnect for Fast Global CDN -->
+  <link rel="dns-prefetch" href="https://cdn.tailwindcss.com">
+  <link rel="dns-prefetch" href="https://unpkg.com">
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Preload Critical LCP Hero Image -->
+  <link rel="preload" as="image" href="assets/images/main_visual01.jpg" fetchpriority="high">
+  
+  <!-- WebFont with display=swap -->
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet"></noscript>
   
   <script>
     tailwind.config = {
@@ -50,6 +60,24 @@
     html { scroll-behavior: smooth; }
     .hero-gradient {
       background: linear-gradient(135deg, rgba(11,60,109,0.92) 0%, rgba(15,23,42,0.88) 100%);
+    }
+    
+    /* 스켈레톤 로딩 애니메이션 및 모달 트랜지션 */
+    @keyframes skeleton-shimmer {
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
+    }
+    .skeleton-loading {
+      background: linear-gradient(90deg, #f1f5f9 25%, #e2e8f0 50%, #f1f5f9 75%);
+      background-size: 200% 100%;
+      animation: skeleton-shimmer 1.5s infinite;
+    }
+    .img-fade-in {
+      opacity: 0;
+      transition: opacity 0.4s ease-in-out;
+    }
+    .img-fade-in.loaded {
+      opacity: 1;
     }
     /* 스크롤바 숨기기 유틸리티 */
     .no-scrollbar::-webkit-scrollbar { display: none; }
@@ -113,7 +141,7 @@
   <!-- ==================== HERO SECTION (타이틀 아래 '일반강' 제거 완료) ==================== -->
   <section id="hero" class="relative pt-20 min-h-[92vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
-      <img src="assets/images/main_visual01.jpg" alt="도스코 메인 비주얼" class="w-full h-full object-cover">
+      <img src="assets/images/main_visual01.jpg" alt="도스코 메인 비주얼" class="w-full h-full object-cover" fetchpriority="high" decoding="async">
       <div class="absolute inset-0 hero-gradient"></div>
     </div>
 
@@ -229,7 +257,7 @@
 
         <div class="lg:col-span-4 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
           <div class="w-48 h-56 sm:w-56 sm:h-64 rounded-2xl overflow-hidden border-2 border-slate-200 shadow-inner bg-slate-100 mb-5 relative">
-            <img src="assets/images/101/ceo_hq.jpg" alt="대표이사 조성대" class="w-full h-full object-cover object-top">
+            <img src="assets/images/101/ceo_hq.jpg" loading="lazy" decoding="async" alt="대표이사 조성대" class="w-full h-full object-cover object-top">
           </div>
           <div class="text-xs uppercase tracking-widest text-brand-600 font-bold mb-1" data-i18n="ceo_role">Representative Director</div>
           <h4 class="text-xl font-extrabold text-slate-900" data-i18n="ceo_name">대표이사 조성대</h4>
@@ -274,9 +302,9 @@
       <div id="product-slider" class="flex gap-6 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory scroll-smooth no-scrollbar" style="scrollbar-width: thin;">
         
         <!-- GRADE 01: 기계구조용 탄소강 -->
-        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('carbon')">
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('carbon')" data-category="carbon">
           <div class="h-48 overflow-hidden bg-slate-100 relative">
-            <img src="assets/images/201_03/01.jpg" alt="탄소강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="assets/images/201_03/01.jpg" loading="lazy" decoding="async" alt="탄소강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">S45C / S50C / S55C</span>
             <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
               <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
@@ -299,9 +327,9 @@
         </div>
 
         <!-- GRADE 02: 탄소공구강 -->
-        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('tool')">
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('tool')" data-category="tool">
           <div class="h-48 overflow-hidden bg-slate-100 relative">
-            <img src="assets/images/201_04/01.jpg" alt="탄소공구강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="assets/images/201_04/01.jpg" loading="lazy" decoding="async" alt="탄소공구강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SK4 / SK5 / SK85</span>
             <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
               <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
@@ -324,9 +352,9 @@
         </div>
 
         <!-- GRADE 03: 합금공구강 -->
-        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('alloy_tool')">
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('alloy_tool')" data-category="tool">
           <div class="h-48 overflow-hidden bg-slate-100 relative">
-            <img src="assets/images/201_05/01.jpg" alt="합금공구강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="assets/images/201_05/01.jpg" loading="lazy" decoding="async" alt="합금공구강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SKS51 / SKS5</span>
             <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
               <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
@@ -349,9 +377,9 @@
         </div>
 
         <!-- GRADE 04: 크롬몰리브덴강 -->
-        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('crmo')">
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('crmo')" data-category="tool">
           <div class="h-48 overflow-hidden bg-slate-100 relative">
-            <img src="assets/images/201_06/01.jpg" alt="크롬몰리브덴강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="assets/images/201_06/01.jpg" loading="lazy" decoding="async" alt="크롬몰리브덴강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SCM415 / SCM435</span>
             <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
               <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
@@ -374,9 +402,9 @@
         </div>
 
         <!-- GRADE 05: 스프링강 -->
-        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('spring')">
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('spring')" data-category="special">
           <div class="h-48 overflow-hidden bg-slate-100 relative">
-            <img src="assets/images/201_07/01.jpg" alt="스프링강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="assets/images/201_07/01.jpg" loading="lazy" decoding="async" alt="스프링강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SUP9 / SUP10</span>
             <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
               <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
@@ -399,9 +427,9 @@
         </div>
 
         <!-- GRADE 06: 스테인레스강 -->
-        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('sts')">
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('sts')" data-category="special">
           <div class="h-48 overflow-hidden bg-slate-100 relative">
-            <img src="assets/images/201_08/01.jpg" alt="스테인레스강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <img src="assets/images/201_08/01.jpg" loading="lazy" decoding="async" alt="스테인레스강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
             <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SUS301 / SUS304</span>
             <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
               <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
@@ -536,7 +564,7 @@
               <p class="text-xs text-slate-500 mt-1" data-i18n="proc_step1_desc">Cold Rolling Mill</p>
             </div>
             <div class="flex-1 w-full flex items-center justify-center p-3 bg-slate-50 rounded-xl overflow-hidden">
-              <img src="assets/images/process_rolling_item.jpg" alt="압연 공정도" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
+              <img src="assets/images/process_rolling_item.jpg" loading="lazy" decoding="async" alt="압연 공정도" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
             </div>
           </div>
 
@@ -549,7 +577,7 @@
               <p class="text-xs text-slate-500 mt-1" data-i18n="proc_step2_desc">Heat Treatment (Lead / Oil / Water)</p>
             </div>
             <div class="flex-1 w-full flex items-center justify-center p-3 bg-slate-50 rounded-xl overflow-hidden">
-              <img src="assets/images/process_step3_item.jpg" alt="열처리 공정" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
+              <img src="assets/images/process_step3_item.jpg" loading="lazy" decoding="async" alt="열처리 공정" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
             </div>
           </div>
 
@@ -562,7 +590,7 @@
               <p class="text-xs text-slate-500 mt-1" data-i18n="proc_step3_desc">Grinding & Surface Polishing</p>
             </div>
             <div class="flex-1 w-full flex items-center justify-center p-3 bg-slate-50 rounded-xl overflow-hidden">
-              <img src="assets/images/process_grinding_2machines.jpg" alt="연마 공정" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
+              <img src="assets/images/process_grinding_2machines.jpg" loading="lazy" decoding="async" alt="연마 공정" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
             </div>
           </div>
 
@@ -575,7 +603,7 @@
               <p class="text-xs text-slate-500 mt-1" data-i18n="proc_step4_desc">Final Inspection & Packaging</p>
             </div>
             <div class="flex-1 w-full flex items-center justify-center p-3 bg-slate-50 rounded-xl overflow-hidden">
-              <img src="assets/images/process_step6_item.jpg" alt="검사 및 출하 공정" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
+              <img src="assets/images/process_step6_item.jpg" loading="lazy" decoding="async" alt="검사 및 출하 공정" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
             </div>
           </div>
         </div>
@@ -588,8 +616,11 @@
             <h3 class="text-xl font-extrabold text-slate-900 mb-1" data-i18n="factory_title">생산현장 (Factory & Production Floor)</h3>
             <p class="text-xs sm:text-sm text-slate-500" data-i18n="factory_subtitle">도스코 안산 반월공장 내 실제 정밀 압연기, 열처리로 및 슬리터 가동 현장입니다.</p>
           </div>
-          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2 sm:p-4">
-            <img src="assets/images/orig_factory_floor.jpg" alt="도스코 생산현장 전경" class="w-full h-auto object-contain mx-auto">
+                    <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2 sm:p-4 relative min-h-[300px]">
+            <div id="skeleton-factory" class="absolute inset-2 sm:inset-4 skeleton-loading rounded-xl flex items-center justify-center text-slate-400 text-sm font-bold">
+              <span class="flex items-center gap-2"><i data-lucide="loader" class="w-5 h-5 animate-spin"></i> 고해상도 현장 이미지 로딩중...</span>
+            </div>
+            <img src="assets/images/orig_factory_floor.jpg" alt="도스코 생산현장 전경" class="w-full h-auto object-contain mx-auto relative z-10 img-fade-in" onload="this.classList.add('loaded'); document.getElementById('skeleton-factory')?.remove();">
           </div>
         </div>
       </div>
@@ -601,8 +632,11 @@
             <h3 class="text-xl font-extrabold text-slate-900 mb-1" data-i18n="package_title">포장 및 출하 (Packaging & Logistics)</h3>
             <p class="text-xs sm:text-sm text-slate-500" data-i18n="package_subtitle">부식 방지 특수 방청지 포장 및 충격 방지 밴딩을 거쳐 국내외로 안전하게 출하됩니다.</p>
           </div>
-          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2 sm:p-4">
-            <img src="assets/images/orig_package_shipping.jpg" alt="포장 및 출하 현황" class="w-full h-auto object-contain mx-auto">
+                    <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2 sm:p-4 relative min-h-[300px]">
+            <div id="skeleton-package" class="absolute inset-2 sm:inset-4 skeleton-loading rounded-xl flex items-center justify-center text-slate-400 text-sm font-bold">
+              <span class="flex items-center gap-2"><i data-lucide="loader" class="w-5 h-5 animate-spin"></i> 출하 공정 이미지 로딩중...</span>
+            </div>
+            <img src="assets/images/orig_package_shipping.jpg" alt="도스코 포장 및 출하" class="w-full h-auto object-contain mx-auto relative z-10 img-fade-in" onload="this.classList.add('loaded'); document.getElementById('skeleton-package')?.remove();">
           </div>
         </div>
       </div>
@@ -614,8 +648,11 @@
             <h3 class="text-xl font-extrabold text-slate-900 mb-1" data-i18n="equip_title">설비현황 (Facilities & Inspection Equipment)</h3>
             <p class="text-xs sm:text-sm text-slate-500" data-i18n="equip_subtitle">압연기, 소둔로, 슬리터 등 생산설비와 인장시험기, 경도계 등 정밀 검사설비 제원표입니다.</p>
           </div>
-          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2 sm:p-4">
-            <img src="assets/images/orig_equipment_spec.jpg" alt="설비현황 제원표" class="w-full h-auto object-contain mx-auto">
+                    <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2 sm:p-4 relative min-h-[300px]">
+            <div id="skeleton-equipment" class="absolute inset-2 sm:inset-4 skeleton-loading rounded-xl flex items-center justify-center text-slate-400 text-sm font-bold">
+              <span class="flex items-center gap-2"><i data-lucide="loader" class="w-5 h-5 animate-spin"></i> 설비 현황표 로딩중...</span>
+            </div>
+            <img src="assets/images/orig_equipment_spec.jpg" alt="도스코 생산 및 검사 설비 현황표" class="w-full h-auto object-contain mx-auto relative z-10 img-fade-in" onload="this.classList.add('loaded'); document.getElementById('skeleton-equipment')?.remove();">
           </div>
         </div>
       </div>
@@ -654,7 +691,7 @@
         <!-- 인증 1 -->
         <div class="cert-item cert-iso bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
           <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_01.jpg', 'ISO 9001 품질경영시스템 인증서')">
-            <img src="assets/images/104_02/01.jpg" alt="ISO 9001 인증서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+            <img src="assets/images/104_02/01.jpg" loading="lazy" decoding="async" alt="ISO 9001 인증서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
           </div>
           <span class="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-[11px] font-bold self-start mb-1">ISO 9001</span>
           <h4 class="text-sm font-bold text-white mb-1" data-i18n="cert_1_title">품질경영시스템 인증</h4>
@@ -664,7 +701,7 @@
         <!-- 인증 2 -->
         <div class="cert-item cert-iso bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
           <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_02.jpg', 'ISO 14001 환경경영시스템 인증서')">
-            <img src="assets/images/104_02/02.jpg" alt="ISO 14001 인증서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+            <img src="assets/images/104_02/02.jpg" loading="lazy" decoding="async" alt="ISO 14001 인증서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
           </div>
           <span class="inline-block px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[11px] font-bold self-start mb-1">ISO 14001</span>
           <h4 class="text-sm font-bold text-white mb-1" data-i18n="cert_2_title">환경경영시스템 인증</h4>
@@ -674,7 +711,7 @@
         <!-- 인증 3 -->
         <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
           <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_03.jpg', '기술혁신형 중소기업(INNO-BIZ) 확인서')">
-            <img src="assets/images/104_02/03.jpg" alt="INNO-BIZ 확인서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+            <img src="assets/images/104_02/03.jpg" loading="lazy" decoding="async" alt="INNO-BIZ 확인서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
           </div>
           <span class="inline-block px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[11px] font-bold self-start mb-1">INNO-BIZ</span>
           <h4 class="text-sm font-bold text-white mb-1" data-i18n="cert_3_title">기술혁신형 중소기업</h4>
@@ -684,7 +721,7 @@
         <!-- 인증 4 -->
         <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
           <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_04.jpg', '기업부설연구소 인정서')">
-            <img src="assets/images/104_02/04.jpg" alt="기업부설연구소 인정서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+            <img src="assets/images/104_02/04.jpg" loading="lazy" decoding="async" alt="기업부설연구소 인정서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
           </div>
           <span class="inline-block px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[11px] font-bold self-start mb-1">R&D Center</span>
           <h4 class="text-sm font-bold text-white mb-1" data-i18n="cert_4_title">기업부설연구소 인정</h4>
@@ -694,7 +731,7 @@
         <!-- 인증 5 -->
         <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
           <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_05.jpg', '특허 제1호 - 특수강 열처리 공법 특허')">
-            <img src="assets/images/104_02/05.jpg" alt="특수강 열처리 공법 특허증" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+            <img src="assets/images/104_02/05.jpg" loading="lazy" decoding="async" alt="특수강 열처리 공법 특허증" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
           </div>
           <span class="inline-block px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[11px] font-bold self-start mb-1">PATENT</span>
           <h4 class="text-sm font-bold text-white mb-1" data-i18n="cert_5_title">열처리 제조공법 특허증</h4>
@@ -704,7 +741,7 @@
         <!-- 인증 6 -->
         <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
           <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_06.jpg', '특허 제2호 - 정밀 압연 슬리팅 장치 특허')">
-            <img src="assets/images/104_02/06.jpg" alt="정밀 압연 장치 특허증" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+            <img src="assets/images/104_02/06.jpg" loading="lazy" decoding="async" alt="정밀 압연 장치 특허증" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
           </div>
           <span class="inline-block px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[11px] font-bold self-start mb-1">PATENT</span>
           <h4 class="text-sm font-bold text-white mb-1" data-i18n="cert_6_title">정밀 슬리팅 장치 특허</h4>
@@ -714,7 +751,7 @@
         <!-- 인증 7 -->
         <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
           <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_07.jpg', '부품소재전문기업 확인서')">
-            <img src="assets/images/104_02/07.jpg" alt="부품소재전문기업 확인서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+            <img src="assets/images/104_02/07.jpg" loading="lazy" decoding="async" alt="부품소재전문기업 확인서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
           </div>
           <span class="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-[11px] font-bold self-start mb-1">SPECIALIZED</span>
           <h4 class="text-sm font-bold text-white mb-1" data-i18n="cert_7_title">부품소재전문기업 확인</h4>
@@ -724,7 +761,7 @@
         <!-- 인증 8 -->
         <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
           <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_08.jpg', '유망 중소기업 및 공인 표창')">
-            <img src="assets/images/104_02/08.jpg" alt="공인 인증 및 표창장" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+            <img src="assets/images/104_02/08.jpg" loading="lazy" decoding="async" alt="공인 인증 및 표창장" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
           </div>
           <span class="inline-block px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[11px] font-bold self-start mb-1">CERTIFIED</span>
           <h4 class="text-sm font-bold text-white mb-1" data-i18n="cert_8_title">우수 중소기업 공인 표창</h4>
@@ -1111,6 +1148,51 @@
         }
       }
     };
+
+    
+    // 제품 카테고리 필터링 (Pagination & Category Filter)
+    function filterProductGrades(cat) {
+      const tabs = ['all', 'carbon', 'tool', 'special'];
+      tabs.forEach(t => {
+        const btn = document.getElementById(`prod-tab-${t}`);
+        if (btn) {
+          if (t === cat) {
+            btn.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-sm transition";
+          } else {
+            btn.className = "px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 transition";
+          }
+        }
+      });
+
+      const cards = document.querySelectorAll('#product-slider > div[data-category]');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // 모달 외부 클릭 및 ESC 키 닫기 이벤트 핸들러
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeProductDetail();
+        closeCertModal();
+      }
+    });
+
+    document.getElementById('product-detail-modal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'product-detail-modal') {
+        closeProductDetail();
+      }
+    });
+
+    document.getElementById('cert-modal')?.addEventListener('click', (e) => {
+      if (e.target.id === 'cert-modal') {
+        closeCertModal();
+      }
+    });
 
     function openProductDetail(gradeKey) {
       const data = productData[currentLang][gradeKey];
