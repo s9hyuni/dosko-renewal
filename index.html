@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(주)도스코 - 특수마대강 열처리 및 냉간압연 전문기업 | DOSKO CO., LTD.</title>
+  <meta name="description" content="특수마대강 열처리 외길을 걸어온 (주)도스코. 고탄소강, 합금공구강, 리본강, 스테인레스 등 고품질 열처리 강대 및 정밀 냉간압연 제품 생산 전문기업입니다.">
+  <meta name="keywords" content="도스코, DOSKO, 특수강, 냉간압연, 열처리, 특수마대강, 고탄소강, SK85, SK95, S50C, S60C, 리본강, 스테인레스">
+  <meta name="author" content="(주)도스코 DOSKO CO., LTD.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/images/logo.png">
+  <link rel="apple-touch-icon" href="assets/images/logo.png">
+
+  <!-- Open Graph / Social Sharing (Kakao, Facebook, etc) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:title" content="(주)도스코 - 특수마대강 열처리 및 냉간압연 전문기업">
+  <meta property="og:description" content="특수마대강 열처리 외길을 걸어온 도스코. 고품질의 다양한 열처리 제품 생산, 국내에서 전세계로 진출합니다.">
+  <meta property="og:image" content="assets/images/img01_04.png">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="(주)도스코 | DOSKO CO., LTD.">
+  <meta name="twitter:description" content="특수마대강 열처리 및 정밀 냉간압연 전문기업 (주)도스코">
+  <meta name="twitter:image" content="assets/images/img01_04.png">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Pretendard', 'sans-serif'],
+            en: ['Montserrat', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f0f7ff',
+              100: '#e0effe',
+              200: '#b9dffe',
+              500: '#0284c7',
+              600: '#005aab', // 기존 도스코 브랜드 블루
+              700: '#0369a1',
+              800: '#075985',
+              900: '#0b3c6d',
+              dark: '#0f172a',
+            }
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-gradient {
+      background: linear-gradient(135deg, rgba(11,60,109,0.92) 0%, rgba(15,23,42,0.88) 100%);
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased font-sans">
+
+  <!-- ==================== TOP BAR & HEADER (순백색 배경 bg-white) ==================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-200 shadow-sm transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- 로고 -->
+        <a href="#hero" class="flex items-center gap-3">
+          <img src="assets/images/logo.png" alt="(주)도스코 로고" class="h-10 sm:h-12 w-auto object-contain">
+        </a>
+
+        <!-- 데스크톱 네비게이션 -->
+        <nav class="hidden lg:flex items-center gap-8 text-[15px] font-semibold text-slate-700">
+          <a href="#about" class="hover:text-brand-600 transition" data-i18n="nav_about">회사소개</a>
+          <a href="#products" class="hover:text-brand-600 transition" data-i18n="nav_products">제품소개</a>
+          <a href="#facility" class="hover:text-brand-600 transition" data-i18n="nav_facility">생산 및 설비</a>
+          <a href="#certificates" class="hover:text-brand-600 transition" data-i18n="nav_certs">인증 및 특허</a>
+          <a href="#quality" class="hover:text-brand-600 transition" data-i18n="nav_quality">품질/경영이념</a>
+          <a href="#contact" class="hover:text-brand-600 transition" data-i18n="nav_contact">고객상담/문의</a>
+        </nav>
+
+        <!-- 우측 액션: 언어 스위처 + 문의 버튼 -->
+        <div class="flex items-center gap-3">
+          <!-- 언어 전환 토글 버튼 (KO / EN) -->
+          <div class="inline-flex items-center bg-slate-100 p-1 rounded-full border border-slate-200 text-xs font-bold">
+            <button id="btn-ko" onclick="setLanguage('ko')" class="px-3 py-1.5 rounded-full bg-brand-600 text-white shadow-sm transition">KO</button>
+            <button id="btn-en" onclick="setLanguage('en')" class="px-3 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition">EN</button>
+          </div>
+
+          <!-- 온라인 견적 바로가기 -->
+          <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-600 text-white text-sm font-semibold hover:bg-brand-700 transition shadow-sm">
+            <i data-lucide="mail" class="w-4 h-4"></i>
+            <span data-i18n="btn_inquiry">온라인 견적상담</span>
+          </a>
+
+          <!-- 모바일 메뉴 버튼 -->
+          <button id="mobile-menu-btn" class="lg:hidden p-2 text-slate-700 hover:text-brand-600" aria-label="메뉴 열기">
+            <i data-lucide="menu" class="w-6 h-6"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 모바일 메뉴 드롭다운 -->
+    <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-5 shadow-lg">
+      <nav class="flex flex-col gap-4 text-base font-semibold text-slate-700">
+        <a href="#about" class="mobile-link py-2 border-b border-slate-100" data-i18n="nav_about">회사소개</a>
+        <a href="#products" class="mobile-link py-2 border-b border-slate-100" data-i18n="nav_products">제품소개</a>
+        <a href="#facility" class="mobile-link py-2 border-b border-slate-100" data-i18n="nav_facility">생산 및 설비</a>
+        <a href="#certificates" class="mobile-link py-2 border-b border-slate-100" data-i18n="nav_certs">인증 및 특허</a>
+        <a href="#quality" class="mobile-link py-2 border-b border-slate-100" data-i18n="nav_quality">품질/경영이념</a>
+        <a href="#contact" class="mobile-link py-2" data-i18n="nav_contact">고객상담/문의</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ==================== HERO SECTION ==================== -->
+  <section id="hero" class="relative pt-20 min-h-[92vh] flex items-center justify-center overflow-hidden">
+    <!-- 배경 이미지 및 오버레이 -->
+    <div class="absolute inset-0 z-0">
+      <img src="assets/images/main_visual01.jpg" alt="도스코 메인 비주얼" class="w-full h-full object-cover">
+      <div class="absolute inset-0 hero-gradient"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center text-white">
+      <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-xs sm:text-sm font-semibold tracking-wide uppercase mb-6 text-sky-200">
+        <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span>
+        <span data-i18n="hero_badge">Global Cold Rolled Steel Leader</span>
+      </div>
+
+      <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-tight max-w-5xl mx-auto mb-6">
+        <span class="whitespace-nowrap inline-block" data-i18n="hero_title_1">특수마대강 열처리 외길을 걸어온 도스코.</span><br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-sky-200 to-white whitespace-nowrap inline-block" data-i18n="hero_title_2">고품질의 다양한 열처리 제품을 생산</span><br/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-sky-200 to-white whitespace-nowrap inline-block" data-i18n="hero_title_3">국내에서 전세계로 진출하고 있습니다.</span>
+      </h1>
+
+      <p class="text-base sm:text-xl text-slate-200 max-w-2xl mx-auto mb-10 leading-relaxed font-light" data-i18n="hero_desc">
+        일반강, 탄소강, 특수합금강, 스테인레스 스틸 정밀 압연 코일 생산으로 자동차, 전자, 정밀 기계 산업 발전을 함께합니다.
+      </p>
+
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a href="#products" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-bold text-base transition shadow-lg shadow-sky-900/40 flex items-center justify-center gap-2">
+          <span data-i18n="hero_cta_product">주요 제품 살펴보기</span>
+          <i data-lucide="arrow-right" class="w-4 h-4"></i>
+        </a>
+        <a href="#contact" class="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 backdrop-blur border border-white/30 text-white font-bold text-base transition flex items-center justify-center gap-2">
+          <i data-lucide="phone-call" class="w-4 h-4"></i>
+          <span data-i18n="hero_cta_contact">견적 문의: 031-493-3131</span>
+        </a>
+      </div>
+
+      <!-- 핵심 수치 요약 -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mt-16 max-w-4xl mx-auto text-left">
+        <div class="bg-white/10 backdrop-blur-md border border-white/15 p-5 rounded-2xl">
+          <div class="text-sky-300 text-2xl sm:text-3xl font-extrabold mb-1">1991~</div>
+          <div class="text-xs sm:text-sm text-slate-300" data-i18n="stat_1">30년+ 특수강 압연 노하우</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md border border-white/15 p-5 rounded-2xl">
+          <div class="text-sky-300 text-2xl sm:text-3xl font-extrabold mb-1">ISO 9001</div>
+          <div class="text-xs sm:text-sm text-slate-300" data-i18n="stat_2">국제 품질경영시스템 인증</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md border border-white/15 p-5 rounded-2xl">
+          <div class="text-sky-300 text-2xl sm:text-3xl font-extrabold mb-1">±0.005mm</div>
+          <div class="text-xs sm:text-sm text-slate-300" data-i18n="stat_3">초정밀 두께 공차 관리</div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-md border border-white/15 p-5 rounded-2xl">
+          <div class="text-sky-300 text-2xl sm:text-3xl font-extrabold mb-1">GLOBAL</div>
+          <div class="text-xs sm:text-sm text-slate-300" data-i18n="stat_4">국내 및 해외 직수출 대응</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== ABOUT SECTION (회사소개 / 대표이사 인사말 및 가치) ==================== -->
+  <section id="about" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- 상단 타이틀 -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-50 text-brand-600 text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="building-2" class="w-3.5 h-3.5"></i>
+          <span data-i18n="about_badge">About DOSKO</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4" data-i18n="about_title">
+          한 발 앞선 비즈니스를 통해 고객에게 최고의 가치를 제공합니다
+        </h2>
+        <p class="text-slate-600 text-base" data-i18n="about_subtitle">
+          (주)도스코는 30여 년간 축적된 냉간압연 기술력을 바탕으로 대한민국 정밀 부품 산업의 근간을 함께해 왔습니다.
+        </p>
+      </div>
+
+      <!-- 본문 영역: 대표이사 인사말 & 사진 카드 -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        
+        <!-- 왼쪽: 풍부해진 인사말 및 경영 철학 텍스트 (8컬럼) -->
+        <div class="lg:col-span-8 bg-slate-50 p-8 sm:p-10 rounded-3xl border border-slate-200 space-y-6">
+          <div class="border-l-4 border-brand-600 pl-4">
+            <h3 class="text-xl sm:text-2xl font-bold text-slate-900" data-i18n="ceo_heading">
+              "정직한 기술과 끊임없는 혁신으로 고객 감동을 실현하겠습니다."
+            </h3>
+            <p class="text-sm text-brand-600 font-semibold mt-1" data-i18n="ceo_subheading">
+              (주)도스코 홈페이지를 찾아주신 고객 여러분을 진심으로 환영합니다.
+            </p>
+          </div>
+
+          <div class="space-y-4 text-slate-600 leading-relaxed text-sm sm:text-base text-justify" data-i18n="ceo_message">
+            <p>
+              (주)도스코는 급변하는 글로벌 산업 환경 속에서도 오직 특수강 냉간압연 코일 분야의 전문화와 기술 혁신에 전념해 왔습니다. 고객이 요구하는 가혹한 물성과 까다로운 규격 조건을 정확하게 실현하기 위해 지속적인 설비 투자와 첨단 품질관리 시스템을 구축하였습니다.
+            </p>
+            <p>
+              자동차, 정밀 전자, 기계 산업의 핵심 소재로서 단 1미크론의 오차도 허용하지 않는 엄격한 정밀 두께 공차(±0.005mm)와 최적의 열처리 평탄도를 구현함으로써 고객사의 제조 공정 안정화와 원가 절감에 실질적인 기여를 해오고 있습니다.
+            </p>
+            <p>
+              앞으로도 고객과의 작은 약속 하나도 소중히 여기며, 소량 다품종 맞춤형 주문부터 신속한 양산 납기까지 신뢰와 상생의 가치로 보답하는 최고의 파트너가 될 것을 약속드립니다.
+            </p>
+          </div>
+
+          <!-- 핵심 역량 3가지 배지 -->
+          <div class="pt-4 border-t border-slate-200 grid grid-cols-1 sm:grid-cols-3 gap-4 text-sm font-semibold text-slate-700">
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-brand-600 flex items-center justify-center shrink-0">
+                <i data-lucide="crosshair" class="w-4 h-4"></i>
+              </div>
+              <span data-i18n="cap_1">±0.005mm 초정밀 압연</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-brand-600 flex items-center justify-center shrink-0">
+                <i data-lucide="flame" class="w-4 h-4"></i>
+              </div>
+              <span data-i18n="cap_2">광휘 소둔 무산화 열처리</span>
+            </div>
+            <div class="flex items-center gap-2.5">
+              <div class="w-8 h-8 rounded-lg bg-white border border-slate-200 text-brand-600 flex items-center justify-center shrink-0">
+                <i data-lucide="truck" class="w-4 h-4"></i>
+              </div>
+              <span data-i18n="cap_3">신속한 납기 및 수출 지원</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 오른쪽: 대표이사 프로필 카드 -->
+        <div class="lg:col-span-4 bg-white p-6 rounded-3xl border border-slate-200 shadow-sm flex flex-col items-center text-center">
+          <div class="w-48 h-56 sm:w-56 sm:h-64 rounded-2xl overflow-hidden border-2 border-slate-200 shadow-inner bg-slate-100 mb-5 relative">
+            <img src="assets/images/101/ceo_hq.jpg" alt="대표이사 조성대" class="w-full h-full object-cover object-top">
+          </div>
+          <div class="text-xs uppercase tracking-widest text-brand-600 font-bold mb-1" data-i18n="ceo_role">Representative Director</div>
+          <h4 class="text-xl font-extrabold text-slate-900" data-i18n="ceo_name">대표이사 조성대</h4>
+          <p class="text-xs text-slate-500 mt-2 leading-relaxed" data-i18n="ceo_company_title">
+            (주)도스코 DOSKO CO., LTD.<br/>
+            안산 반월국가산업단지
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== PRODUCTS SECTION (강종별 가로 슬라이더 & 세부 모달 확장 시스템) ==================== -->
+  <section id="products" class="py-24 bg-slate-50 border-y border-slate-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider mb-3">
+            <i data-lucide="layers" class="w-3.5 h-3.5"></i>
+            <span data-i18n="prod_badge">Steel Grades Lineup</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-2" data-i18n="prod_title">
+            도스코 주요 강종별 제품소개
+          </h2>
+          <p class="text-slate-600 text-base" data-i18n="prod_subtitle">
+            각 강종 카드를 클릭하시면 <strong class="text-brand-600">세부 스펙 및 기술 사양 모달창</strong>이 확장되어 나타납니다.
+          </p>
+        </div>
+
+        <!-- 슬라이더 좌/우 컨트롤 버튼 -->
+        <div class="flex items-center gap-2 self-start md:self-end">
+          <button onclick="scrollProductSlider(-1)" class="p-3 rounded-full bg-white border border-slate-300 hover:border-brand-600 hover:text-brand-600 shadow-sm transition" aria-label="이전 강종">
+            <i data-lucide="chevron-left" class="w-5 h-5"></i>
+          </button>
+          <button onclick="scrollProductSlider(1)" class="p-3 rounded-full bg-white border border-slate-300 hover:border-brand-600 hover:text-brand-600 shadow-sm transition" aria-label="다음 강종">
+            <i data-lucide="chevron-right" class="w-5 h-5"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 가로 슬라이더 컨테이너 (옆으로 슬라이드되어 가려져 있는 수평 스크롤 형태) -->
+      <div id="product-slider" class="flex gap-6 overflow-x-auto pb-6 pt-2 snap-x snap-mandatory scroll-smooth no-scrollbar" style="scrollbar-width: thin;">
+        
+        <!-- 강종 1: 일반강 (201_02) -->
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('general')">
+          <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <img src="assets/images/201_02/01.jpg" alt="일반강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SPCC / SPHC</span>
+            <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="btn_view_spec">상세스펙 보기</span>
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="text-xs font-bold text-brand-600 mb-1">GRADE 01</div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2" data-i18n="grade_1_title">일반강 (Cold Rolled Commercial)</h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed" data-i18n="grade_1_desc">
+              가공성 및 표면 조도가 뛰어나 가전제품, 건자재, 자동차 내외판 등 범용 정밀 가공에 널리 사용됩니다.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+              <span>SPCC, SPCD, SPCE</span>
+              <span class="text-brand-600 flex items-center gap-1 group-hover:translate-x-1 transition">Detail &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 강종 2: 탄소강 (201_03) -->
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('carbon')">
+          <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <img src="assets/images/201_03/01.jpg" alt="탄소강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">S45C / S50C / S55C</span>
+            <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="btn_view_spec">상세스펙 보기</span>
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="text-xs font-bold text-brand-600 mb-1">GRADE 02</div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2" data-i18n="grade_2_title">기계구조용 탄소강</h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed" data-i18n="grade_2_desc">
+              적절한 탄소 함유량으로 열처리(퀜칭/템퍼링) 후 우수한 강도와 내마모성을 발휘하는 자동차 기계 부품용 강판.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+              <span>S10C ~ S55C 계열</span>
+              <span class="text-brand-600 flex items-center gap-1 group-hover:translate-x-1 transition">Detail &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 강종 3: 탄소공구강 (201_04) -->
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('tool')">
+          <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <img src="assets/images/201_04/01.jpg" alt="탄소공구강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SK4 / SK5 / SK85</span>
+            <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="btn_view_spec">상세스펙 보기</span>
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="text-xs font-bold text-brand-600 mb-1">GRADE 03</div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2" data-i18n="grade_3_title">탄소공구강 (Carbon Tool Steel)</h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed" data-i18n="grade_3_desc">
+              고탄소강 특유의 높은 경도와 절삭 성능으로 산업용 톱날, 커터, 펀칭 금형 및 정밀 부품에 최적입니다.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+              <span>SK85, SK75, SK105</span>
+              <span class="text-brand-600 flex items-center gap-1 group-hover:translate-x-1 transition">Detail &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 강종 4: 합금공구강 (201_05) -->
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('alloy_tool')">
+          <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <img src="assets/images/201_05/01.jpg" alt="합금공구강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SKS51 / SKS5</span>
+            <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="btn_view_spec">상세스펙 보기</span>
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="text-xs font-bold text-brand-600 mb-1">GRADE 04</div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2" data-i18n="grade_4_title">합금공구강 (Alloy Tool Steel)</h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed" data-i18n="grade_4_desc">
+              크롬(Cr), 바나듐(V) 첨가로 인성과 내충격성을 높여 목공용 톱날, 정밀 커터 및 특수 밴드쏘에 사용됩니다.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+              <span>SKS51, SKS2, SKS3</span>
+              <span class="text-brand-600 flex items-center gap-1 group-hover:translate-x-1 transition">Detail &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 강종 5: 크롬몰리브덴강 (201_06) -->
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('crmo')">
+          <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <img src="assets/images/201_06/01.jpg" alt="크롬몰리브덴강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SCM415 / SCM435</span>
+            <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="btn_view_spec">상세스펙 보기</span>
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="text-xs font-bold text-brand-600 mb-1">GRADE 05</div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2" data-i18n="grade_5_title">크롬몰리브덴 합금강 (Cr-Mo)</h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed" data-i18n="grade_5_desc">
+              고온 강도와 침탄 담금질 특성이 뛰어나 자동차 엔진, 미션 기어, 안전벨트 리트랙터용 핵심 부품재.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+              <span>SCM415, SCM420, SCM435</span>
+              <span class="text-brand-600 flex items-center gap-1 group-hover:translate-x-1 transition">Detail &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 강종 6: 스프링강 (201_07) -->
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('spring')">
+          <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <img src="assets/images/201_07/01.jpg" alt="스프링강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SUP9 / SUP10</span>
+            <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="btn_view_spec">상세스펙 보기</span>
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="text-xs font-bold text-brand-600 mb-1">GRADE 06</div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2" data-i18n="grade_6_title">스프링용 강대 (Spring Steel)</h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed" data-i18n="grade_6_desc">
+              피로 한도와 탄성 복원력이 탁월하여 자동차 클러치 스프링, 판스프링, 도어락, 정밀 전자 스위치용.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+              <span>SUP6, SUP9, SUP10</span>
+              <span class="text-brand-600 flex items-center gap-1 group-hover:translate-x-1 transition">Detail &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- 강종 7: 스테인레스강 (201_08) -->
+        <div class="snap-start shrink-0 w-[300px] sm:w-[340px] bg-white rounded-3xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col cursor-pointer" onclick="openProductDetail('sts')">
+          <div class="h-48 overflow-hidden bg-slate-100 relative">
+            <img src="assets/images/201_08/01.jpg" alt="스테인레스강 코일" class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            <span class="absolute top-4 left-4 bg-brand-900/80 text-white text-xs px-3 py-1 rounded-full font-bold backdrop-blur">SUS301 / SUS304</span>
+            <div class="absolute inset-0 bg-brand-900/20 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">
+              <span class="px-4 py-2 rounded-xl bg-white text-brand-900 font-bold text-xs shadow-lg flex items-center gap-1.5">
+                <i data-lucide="maximize-2" class="w-3.5 h-3.5"></i>
+                <span data-i18n="btn_view_spec">상세스펙 보기</span>
+              </span>
+            </div>
+          </div>
+          <div class="p-6 flex-1 flex flex-col">
+            <div class="text-xs font-bold text-brand-600 mb-1">GRADE 07</div>
+            <h3 class="text-lg font-extrabold text-slate-900 mb-2" data-i18n="grade_7_title">스테인리스 스틸 (Stainless Steel)</h3>
+            <p class="text-slate-600 text-sm mb-4 line-clamp-2 leading-relaxed" data-i18n="grade_7_desc">
+              극박 정밀 압연(초박판) 및 고탄성 소둔으로 스마트폰 돔 스위치, 전자기기 정밀 커넥터에 공급.
+            </p>
+            <div class="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-slate-500">
+              <span>STS301 CSP, STS304, STS430</span>
+              <span class="text-brand-600 flex items-center gap-1 group-hover:translate-x-1 transition">Detail &rarr;</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- 제품 특성 및 가공규격 안내 배너 -->
+      <div class="mt-12 bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
+            <i data-lucide="sliders" class="w-6 h-6"></i>
+          </div>
+          <div>
+            <h4 class="font-bold text-slate-900 text-base sm:text-lg" data-i18n="spec_title">가공 규격 및 공차 안내</h4>
+            <p class="text-slate-600 text-sm" data-i18n="spec_desc">두께공차, 폭공차, 화학성분 분석표 및 경도 환산표 등 상세 기술자료를 지원합니다.</p>
+          </div>
+        </div>
+        <a href="#contact" class="px-5 py-2.5 rounded-lg bg-slate-900 hover:bg-slate-800 text-white text-sm font-semibold transition shrink-0" data-i18n="spec_btn">
+          상세 기술규격 문의하기
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 강종 클릭 시 확장되는 세부 스펙 팝업 모달 -->
+  <div id="product-detail-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-3xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
+      <div class="p-5 border-b border-slate-200 flex items-center justify-between bg-slate-50">
+        <div>
+          <span id="modal-grade-badge" class="px-2.5 py-0.5 rounded bg-brand-100 text-brand-700 text-xs font-bold uppercase">GRADE</span>
+          <h4 id="modal-grade-title" class="text-xl font-extrabold text-slate-900 mt-1">강종 상세 정보</h4>
+        </div>
+        <button onclick="closeProductDetail()" class="p-2 text-slate-400 hover:text-slate-700 rounded-full hover:bg-slate-200 transition">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+      <div class="p-6 sm:p-8 overflow-y-auto space-y-6">
+        <div class="flex flex-col sm:flex-row gap-6 items-center">
+          <img id="modal-grade-img" src="" alt="강종 코일" class="w-full sm:w-64 h-48 object-cover rounded-2xl border border-slate-200 shadow-sm shrink-0">
+          <div class="space-y-3">
+            <h5 class="text-sm font-bold text-slate-700 uppercase tracking-wider">주요 특징 및 물성</h5>
+            <p id="modal-grade-desc" class="text-sm text-slate-600 leading-relaxed"></p>
+            <div class="pt-2">
+              <span class="text-xs font-bold text-slate-500 uppercase">대표 규격:</span>
+              <div id="modal-grade-specs" class="flex flex-wrap gap-1.5 mt-1"></div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- 기술 사양 및 용도 테이블 -->
+        <div class="border border-slate-200 rounded-2xl overflow-hidden">
+          <table class="w-full text-left text-xs sm:text-sm">
+            <thead class="bg-slate-100 border-b border-slate-200 font-bold text-slate-700">
+              <tr>
+                <th class="p-3">항목</th>
+                <th class="p-3">도스코 공급 사양</th>
+              </tr>
+            </thead>
+            <tbody id="modal-grade-table" class="divide-y divide-slate-100 text-slate-600">
+            </tbody>
+          </table>
+        </div>
+
+        <div class="flex justify-end gap-3 pt-2">
+          <button onclick="closeProductDetail()" class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 text-sm font-semibold hover:bg-slate-50 transition">닫기</button>
+          <a href="#contact" onclick="closeProductDetail()" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition shadow-md">이 강종으로 견적 문의하기</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== FACILITY SECTION (생산 및 설비 - 원본 100% 반영 탭 시스템) ==================== -->
+  <section id="facility" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-100 text-slate-700 text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="cpu" class="w-3.5 h-3.5"></i>
+          <span data-i18n="fac_badge">Manufacturing & Facilities</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mb-4" data-i18n="fac_title">
+          생산 및 설비 현황
+        </h2>
+        <p class="text-slate-600 text-base" data-i18n="fac_subtitle">
+          도스코만의 정밀 냉간압연 공정도, 생산현장, 포장출하 및 공인 설비현황을 원본 그대로 투명하게 안내합니다.
+        </p>
+
+        <!-- 4대 서브메뉴 탭 버튼 -->
+        <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 mt-8">
+          <button onclick="switchFacilityTab('flow')" id="tab-btn-flow" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-brand-600 text-white shadow-sm transition">
+            <span data-i18n="tab_flow">1. 공정도</span>
+          </button>
+          <button onclick="switchFacilityTab('factory')" id="tab-btn-factory" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            <span data-i18n="tab_factory">2. 생산현장</span>
+          </button>
+          <button onclick="switchFacilityTab('package')" id="tab-btn-package" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            <span data-i18n="tab_package">3. 포장 및 출하</span>
+          </button>
+          <button onclick="switchFacilityTab('equipment')" id="tab-btn-equipment" class="px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+            <span data-i18n="tab_equipment">4. 설비현황</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- [탭 1] 301_01: 공정도 -->
+      <div id="tab-content-flow" class="facility-tab-pane bg-slate-50 p-4 sm:p-8 rounded-3xl border border-slate-200">
+        <div class="max-w-5xl mx-auto space-y-6">
+          <div class="text-center mb-8">
+            <h3 class="text-xl sm:text-2xl font-extrabold text-slate-900 mb-2" data-i18n="flow_title">전체 공정도 (Manufacturing Process)</h3>
+            <p class="text-xs sm:text-sm text-slate-500" data-i18n="flow_subtitle">원소재 입고부터 정밀 압연, 열처리, 연마 및 검사·출하까지의 표준화된 공정 순서입니다.</p>
+          </div>
+
+          <!-- 1단계: 압연 -->
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-6">
+            <div class="w-full md:w-56 shrink-0 text-center md:text-left border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0 md:pr-6">
+              <span class="inline-block px-2.5 py-1 rounded bg-brand-50 text-brand-600 text-xs font-bold mb-1">STEP 01</span>
+              <h4 class="text-xl font-extrabold text-slate-900" data-i18n="proc_step1_title">압연, 소둔, 절단</h4>
+              <p class="text-xs text-slate-500 mt-1" data-i18n="proc_step1_desc">Cold Rolling Mill</p>
+            </div>
+            <div class="flex-1 w-full flex items-center justify-center p-3 bg-slate-50 rounded-xl overflow-hidden">
+              <img src="assets/images/process_rolling_item.jpg" alt="압연 공정도" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
+            </div>
+          </div>
+
+          <!-- 연결 화살표 -->
+          <div class="flex justify-center text-slate-400">
+            <i data-lucide="arrow-down" class="w-6 h-6"></i>
+          </div>
+
+          <!-- 2단계: 열처리(납,오일,수냉) - 기존 3번 중간압연/열처리 전체라인 이미지 적용 -->
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-6">
+            <div class="w-full md:w-56 shrink-0 text-center md:text-left border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0 md:pr-6">
+              <span class="inline-block px-2.5 py-1 rounded bg-amber-50 text-amber-600 text-xs font-bold mb-1">STEP 02</span>
+              <h4 class="text-xl font-extrabold text-slate-900" data-i18n="proc_step2_title">열처리(납,오일,수냉)</h4>
+              <p class="text-xs text-slate-500 mt-1" data-i18n="proc_step2_desc">Heat Treatment (Lead / Oil / Water)</p>
+            </div>
+            <div class="flex-1 w-full flex items-center justify-center p-3 bg-slate-50 rounded-xl overflow-hidden">
+              <img src="assets/images/process_step3_item.jpg" alt="열처리(납,오일,수냉) 공정 설비" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
+            </div>
+          </div>
+
+          <!-- 연결 화살표 -->
+          <div class="flex justify-center text-slate-400">
+            <i data-lucide="arrow-down" class="w-6 h-6"></i>
+          </div>
+
+          <!-- 3단계: 연마 - 기계 2개 모두 노출 및 좌측 회색 화살표 제거 완료 -->
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-6">
+            <div class="w-full md:w-56 shrink-0 text-center md:text-left border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0 md:pr-6">
+              <span class="inline-block px-2.5 py-1 rounded bg-emerald-50 text-emerald-600 text-xs font-bold mb-1">STEP 03</span>
+              <h4 class="text-xl font-extrabold text-slate-900" data-i18n="proc_step3_title">연마</h4>
+              <p class="text-xs text-slate-500 mt-1" data-i18n="proc_step3_desc">Grinding & Surface Polishing</p>
+            </div>
+            <div class="flex-1 w-full flex items-center justify-center p-3 bg-slate-50 rounded-xl overflow-hidden">
+              <img src="assets/images/process_grinding_2machines.jpg" alt="연마 공정 (기계 2기 완제)" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
+            </div>
+          </div>
+
+          <!-- 연결 화살표 -->
+          <div class="flex justify-center text-slate-400">
+            <i data-lucide="arrow-down" class="w-6 h-6"></i>
+          </div>
+
+          <!-- 4단계: 검사 및 포장출하 -->
+          <div class="bg-white rounded-2xl p-5 sm:p-6 border border-slate-200 shadow-sm flex flex-col md:flex-row items-center gap-6">
+            <div class="w-full md:w-56 shrink-0 text-center md:text-left border-b md:border-b-0 md:border-r border-slate-100 pb-4 md:pb-0 md:pr-6">
+              <span class="inline-block px-2.5 py-1 rounded bg-sky-50 text-sky-600 text-xs font-bold mb-1">STEP 04</span>
+              <h4 class="text-xl font-extrabold text-slate-900" data-i18n="proc_step4_title">검사 및 포장출하</h4>
+              <p class="text-xs text-slate-500 mt-1" data-i18n="proc_step4_desc">Final Inspection & Packaging</p>
+            </div>
+            <div class="flex-1 w-full flex items-center justify-center p-3 bg-slate-50 rounded-xl overflow-hidden">
+              <img src="assets/images/process_step6_item.jpg" alt="최종 검사 및 포장출하" class="max-w-full h-auto object-contain transform hover:scale-105 transition duration-300">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- [탭 2] 301_02: 생산현장 -->
+      <div id="tab-content-factory" class="facility-tab-pane hidden bg-slate-50 p-4 sm:p-8 rounded-3xl border border-slate-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-extrabold text-slate-900 mb-1" data-i18n="factory_title">생산현장 (Factory & Production Floor)</h3>
+            <p class="text-xs sm:text-sm text-slate-500" data-i18n="factory_subtitle">도스코 안산 반월공장 내 실제 정밀 압연기, 열처리로 및 슬리터 가동 현장입니다.</p>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2 sm:p-4">
+            <img src="assets/images/orig_factory_floor.jpg" alt="도스코 생산현장 전경" class="w-full h-auto object-contain mx-auto">
+          </div>
+        </div>
+      </div>
+
+      <!-- [탭 3] 301_03: 포장 및 출하 -->
+      <div id="tab-content-package" class="facility-tab-pane hidden bg-slate-50 p-4 sm:p-8 rounded-3xl border border-slate-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-extrabold text-slate-900 mb-1" data-i18n="package_title">포장 및 출하 (Packaging & Logistics)</h3>
+            <p class="text-xs sm:text-sm text-slate-500" data-i18n="package_subtitle">부식 방지 특수 방청지 포장 및 충격 방지 밴딩을 거쳐 국내외로 안전하게 출하됩니다.</p>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2 sm:p-4">
+            <img src="assets/images/orig_package_shipping.jpg" alt="도스코 포장 및 출하 현황" class="w-full h-auto object-contain mx-auto">
+          </div>
+        </div>
+      </div>
+
+      <!-- [탭 4] 302: 설비현황 -->
+      <div id="tab-content-equipment" class="facility-tab-pane hidden bg-slate-50 p-4 sm:p-8 rounded-3xl border border-slate-200">
+        <div class="max-w-4xl mx-auto">
+          <div class="text-center mb-6">
+            <h3 class="text-xl font-extrabold text-slate-900 mb-1" data-i18n="equip_title">설비현황 (Facilities & Inspection Equipment)</h3>
+            <p class="text-xs sm:text-sm text-slate-500" data-i18n="equip_subtitle">압연기, 소둔로, 슬리터 등 생산설비와 인장시험기, 경도계 등 정밀 검사설비 제원표입니다.</p>
+          </div>
+          <div class="rounded-2xl overflow-hidden border border-slate-200 shadow-md bg-white p-2 sm:p-4">
+            <img src="assets/images/orig_equipment_spec.jpg" alt="도스코 설비 및 검사장비 현황표" class="w-full h-auto object-contain mx-auto">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== CERTIFICATES & PATENTS SECTION (인증 및 특허 강조 페이지) ==================== -->
+  <section id="certificates" class="py-24 bg-slate-900 text-white relative overflow-hidden">
+    <!-- 배경 장식 글로우 -->
+    <div class="absolute top-0 right-1/4 w-96 h-96 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-brand-600/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-500/20 text-sky-300 text-xs font-bold uppercase tracking-wider mb-3">
+          <i data-lucide="award" class="w-3.5 h-3.5"></i>
+          <span data-i18n="cert_badge">Certificates & Patents</span>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-extrabold text-white mb-4" data-i18n="cert_title">
+          공인된 기술력과 품질 인증 & 특허 현황
+        </h2>
+        <p class="text-slate-300 text-base" data-i18n="cert_subtitle">
+          ISO 9001/14001 국제 표준 인증 및 독자적인 특수강 압연·열처리 기술 특허로 글로벌 경쟁력을 입증합니다.
+        </p>
+
+        <!-- 인증/특허 필터 탭 -->
+        <div class="flex items-center justify-center gap-3 mt-8">
+          <button onclick="filterCerts('all')" id="cert-tab-all" class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-sm transition">전체보기</button>
+          <button onclick="filterCerts('iso')" id="cert-tab-iso" class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/10 text-slate-300 hover:bg-white/20 transition">품질·환경경영인증 (ISO)</button>
+          <button onclick="filterCerts('patent')" id="cert-tab-patent" class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/10 text-slate-300 hover:bg-white/20 transition">특허 및 기술인증</button>
+        </div>
+      </div>
+
+      <!-- 인증서 및 특허 그리드 (8개 원본 고해상도 인증서 카드) -->
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        
+        <!-- 인증서 1: ISO 9001 -->
+        <div class="cert-item cert-iso bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
+          <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_01.jpg', 'ISO 9001 품질경영시스템 인증서')">
+            <img src="assets/images/104_02/01.jpg" alt="ISO 9001 인증서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <span class="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-[11px] font-bold self-start mb-1">ISO 9001</span>
+          <h4 class="text-sm font-bold text-white mb-1">품질경영시스템 인증</h4>
+          <p class="text-xs text-slate-400 mt-auto">특수강 냉간압연 코일 설계 및 제조</p>
+        </div>
+
+        <!-- 인증서 2: ISO 14001 -->
+        <div class="cert-item cert-iso bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
+          <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_02.jpg', 'ISO 14001 환경경영시스템 인증서')">
+            <img src="assets/images/104_02/02.jpg" alt="ISO 14001 인증서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <span class="inline-block px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300 text-[11px] font-bold self-start mb-1">ISO 14001</span>
+          <h4 class="text-sm font-bold text-white mb-1">환경경영시스템 인증</h4>
+          <p class="text-xs text-slate-400 mt-auto">친환경 제조 공정 및 표준화 관리</p>
+        </div>
+
+        <!-- 인증서 3: 벤처기업 / 이노비즈 -->
+        <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
+          <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_03.jpg', '기술혁신형 중소기업(INNO-BIZ) 확인서')">
+            <img src="assets/images/104_02/03.jpg" alt="INNO-BIZ 확인서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <span class="inline-block px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[11px] font-bold self-start mb-1">INNO-BIZ</span>
+          <h4 class="text-sm font-bold text-white mb-1">기술혁신형 중소기업</h4>
+          <p class="text-xs text-slate-400 mt-auto">중소벤처기업부 인증 기술 경쟁력</p>
+        </div>
+
+        <!-- 인증서 4: 기업부설연구소 -->
+        <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
+          <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_04.jpg', '기업부설연구소 인정서')">
+            <img src="assets/images/104_02/04.jpg" alt="기업부설연구소 인정서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <span class="inline-block px-2 py-0.5 rounded bg-purple-500/20 text-purple-300 text-[11px] font-bold self-start mb-1">R&D Center</span>
+          <h4 class="text-sm font-bold text-white mb-1">기업부설연구소 인정</h4>
+          <p class="text-xs text-slate-400 mt-auto">한국산업기술진흥협회(KOITA)</p>
+        </div>
+
+        <!-- 인증서 5: 특허 1 -->
+        <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
+          <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_05.jpg', '특허 제1호 - 특수강 열처리 공법 특허')">
+            <img src="assets/images/104_02/05.jpg" alt="특수강 열처리 공법 특허증" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <span class="inline-block px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[11px] font-bold self-start mb-1">PATENT</span>
+          <h4 class="text-sm font-bold text-white mb-1">열처리 제조공법 특허증</h4>
+          <p class="text-xs text-slate-400 mt-auto">대한민국 특허청 등록 특허기술</p>
+        </div>
+
+        <!-- 인증서 6: 특허 2 -->
+        <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
+          <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_06.jpg', '특허 제2호 - 정밀 압연 슬리팅 장치 특허')">
+            <img src="assets/images/104_02/06.jpg" alt="정밀 압연 장치 특허증" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <span class="inline-block px-2 py-0.5 rounded bg-rose-500/20 text-rose-300 text-[11px] font-bold self-start mb-1">PATENT</span>
+          <h4 class="text-sm font-bold text-white mb-1">정밀 슬리팅 장치 특허</h4>
+          <p class="text-xs text-slate-400 mt-auto">초정밀 폭공차 제어 특허 등록</p>
+        </div>
+
+        <!-- 인증서 7: 부품소재전문기업 -->
+        <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
+          <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_07.jpg', '부품소재전문기업 확인서')">
+            <img src="assets/images/104_02/07.jpg" alt="부품소재전문기업 확인서" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <span class="inline-block px-2 py-0.5 rounded bg-sky-500/20 text-sky-300 text-[11px] font-bold self-start mb-1">SPECIALIZED</span>
+          <h4 class="text-sm font-bold text-white mb-1">부품소재전문기업 확인</h4>
+          <p class="text-xs text-slate-400 mt-auto">산업통상자원부 기술 공인</p>
+        </div>
+
+        <!-- 인증서 8: 유망중소기업 / 기타 표창 -->
+        <div class="cert-item cert-patent bg-white/5 border border-white/10 hover:border-sky-400/50 rounded-2xl p-4 transition duration-300 group flex flex-col">
+          <div class="bg-white rounded-xl p-3 mb-4 overflow-hidden shadow-inner flex items-center justify-center h-56 cursor-pointer" onclick="openCertModal('assets/images/104_02/104_02_08.jpg', '유망 중소기업 및 공인 표창')">
+            <img src="assets/images/104_02/08.jpg" alt="공인 인증 및 표창장" class="max-h-full w-auto object-contain group-hover:scale-105 transition duration-300">
+          </div>
+          <span class="inline-block px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 text-[11px] font-bold self-start mb-1">CERTIFIED</span>
+          <h4 class="text-sm font-bold text-white mb-1">우수 중소기업 공인 표창</h4>
+          <p class="text-xs text-slate-400 mt-auto">모범 기업 경영 및 품질 성과</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 인증서 원본 확대 모달 (클릭 시 팝업) -->
+  <div id="cert-modal" class="fixed inset-0 z-50 hidden bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-hidden shadow-2xl flex flex-col">
+      <div class="p-4 border-b border-slate-200 flex items-center justify-between">
+        <h4 id="cert-modal-title" class="font-bold text-slate-900 text-base">인증서 원본 보기</h4>
+        <button onclick="closeCertModal()" class="p-2 text-slate-400 hover:text-slate-700 rounded-full hover:bg-slate-100 transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <div class="p-6 overflow-y-auto flex items-center justify-center bg-slate-50">
+        <img id="cert-modal-img" src="" alt="인증서 확대" class="max-h-[70vh] w-auto object-contain shadow-lg rounded-lg border border-slate-200">
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== QUALITY & PHILOSOPHY (품질/경영이념) ==================== -->
+  <section id="quality" class="py-20 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+        
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-4 mx-auto md:mx-0">
+            <i data-lucide="shield-check" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-white" data-i18n="q_1_title">품질제일주의</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="q_1_desc">
+            엄격한 통계적 공정관리(SPC)와 ISO 9001 품질 표준을 준수하여 불량률 제로화를 실현합니다.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-4 mx-auto md:mx-0">
+            <i data-lucide="zap" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-white" data-i18n="q_2_title">고객 납기 우선</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="q_2_desc">
+            신속한 원자재 수급망과 탄력적인 생산 설비 운영으로 고객사의 촉박한 일정에도 완벽 대응합니다.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white/5 border border-white/10">
+          <div class="w-12 h-12 rounded-xl bg-sky-500/20 text-sky-400 flex items-center justify-center mb-4 mx-auto md:mx-0">
+            <i data-lucide="award" class="w-6 h-6"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-2 text-white" data-i18n="q_3_title">신뢰와 상생</h3>
+          <p class="text-slate-400 text-sm leading-relaxed" data-i18n="q_3_desc">
+            단순 납품을 넘어 고객 제품의 원가 절감과 생산성 향상을 함께 연구하는 기술 파트너가 됩니다.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==================== CONTACT & INQUIRY SECTION (상담 및 오시는길) ==================== -->
+  <section id="contact" class="py-24 bg-slate-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+        
+        <!-- 왼쪽: 회사 연락처 및 상담 정보 -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-100 text-brand-700 text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="headset" class="w-3.5 h-3.5"></i>
+            <span data-i18n="contact_badge">Contact Us</span>
+          </div>
+
+          <h2 class="text-3xl font-extrabold text-slate-900" data-i18n="contact_title">
+            견적 및 제품 상담문의
+          </h2>
+          <p class="text-slate-600 text-sm leading-relaxed" data-i18n="contact_subtitle">
+            도스코의 숙련된 엔지니어와 영업 전문가가 고객님의 사양에 맞는 최적의 제품을 친절하게 상담해 드립니다.
+          </p>
+
+          <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm space-y-4">
+            <!-- 전화번호 -->
+            <div class="flex items-start gap-4">
+              <div class="p-3 bg-brand-50 rounded-xl text-brand-600 shrink-0">
+                <i data-lucide="phone" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-semibold uppercase" data-i18n="c_phone">대표 전화</div>
+                <div class="text-xl font-bold text-slate-900" data-i18n="c_phone_val">031-493-3131</div>
+              </div>
+            </div>
+
+            <!-- 팩스 번호 -->
+            <div class="flex items-start gap-4">
+              <div class="p-3 bg-brand-50 rounded-xl text-brand-600 shrink-0">
+                <i data-lucide="printer" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-semibold uppercase" data-i18n="c_fax">팩스 번호</div>
+                <div class="text-sm font-medium text-slate-800 leading-relaxed" data-i18n="c_fax_val">
+                  <span class="font-bold text-slate-900">0507-891-0565</span> (인터넷팩스 / 대표)<br/>
+                  <span>031-493-3237</span> (국내영업)
+                </div>
+              </div>
+            </div>
+
+            <!-- 이메일 문의 (국문/영문 라벨 완벽 대응) -->
+            <div class="flex items-start gap-4">
+              <div class="p-3 bg-brand-50 rounded-xl text-brand-600 shrink-0">
+                <i data-lucide="mail" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-semibold uppercase" data-i18n="c_email">이메일 문의</div>
+                <div class="text-sm font-medium text-slate-800 leading-relaxed" data-i18n="c_email_val">
+                  국내영업: <a href="mailto:sales@dosko.co.kr" class="text-brand-600 underline">sales@dosko.co.kr</a><br/>
+                  해외수출: <a href="mailto:dosko.e@dosko.co.kr" class="text-brand-600 underline">dosko.e@dosko.co.kr</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- 주소 -->
+            <div class="flex items-start gap-4">
+              <div class="p-3 bg-brand-50 rounded-xl text-brand-600 shrink-0">
+                <i data-lucide="map-pin" class="w-5 h-5"></i>
+              </div>
+              <div>
+                <div class="text-xs text-slate-500 font-semibold uppercase" data-i18n="c_address">본사 및 공장 주소</div>
+                <div class="text-sm font-medium text-slate-800" data-i18n="c_addr_val">
+                  [15407] 경기도 안산시 단원구 신원로 133번길 84 (신길동, 반월국가산업단지)
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 오른쪽: 온라인 문의 폼 (모바일 반응형) -->
+        <div class="lg:col-span-7 bg-white p-8 sm:p-10 rounded-3xl border border-slate-200 shadow-sm">
+          <h3 class="text-xl font-bold text-slate-900 mb-2" data-i18n="form_title">온라인 견적 및 상담 접수</h3>
+          <p class="text-slate-500 text-sm mb-6" data-i18n="form_desc">문의 내용을 남겨주시면 담당자가 빠른 시일 내에 연락드립니다.</p>
+
+          <form onsubmit="handleInquirySubmit(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1" data-i18n="f_company">회사명 *</label>
+                <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1" data-i18n="f_name">담당자명 *</label>
+                <input type="text" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1" data-i18n="f_phone">연락처 *</label>
+                <input type="tel" required placeholder="010-0000-0000" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm">
+              </div>
+              <div>
+                <label class="block text-xs font-bold text-slate-700 uppercase mb-1" data-i18n="f_email">이메일 *</label>
+                <input type="email" required placeholder="example@company.com" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm">
+              </div>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1" data-i18n="f_category">문의 강종 / 분야</label>
+              <select id="form-category-select" class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm">
+                <option value="carbon">탄소강 / 탄소공구강 (SK5, S55C 등)</option>
+                <option value="alloy">합금강 / 크롬몰리브덴강 (SCM415, SCM435 등)</option>
+                <option value="spring">스프링강 / 스테인레스 스틸 (SUP, STS301 등)</option>
+                <option value="other">기타 정밀 압연 및 슬리팅 문의</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block text-xs font-bold text-slate-700 uppercase mb-1" data-i18n="f_content">문의 내용 및 규격 (두께/폭/수량 등) *</label>
+              <textarea id="form-content-textarea" rows="4" required class="w-full px-4 py-2.5 rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-brand-600 text-sm" placeholder="필요하신 두께, 폭, 용도 등을 기재해 주시면 신속한 견적이 가능합니다."></textarea>
+            </div>
+
+            <button type="submit" class="w-full py-3.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white font-bold text-sm transition shadow-md flex items-center justify-center gap-2">
+              <i data-lucide="send" class="w-4 h-4"></i>
+              <span data-i18n="f_submit">문의 내용 발송하기</span>
+            </button>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900 text-xs sm:text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-6 pb-8 border-b border-slate-800">
+        
+        <!-- 하단 로고 -->
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2.5"><span class="text-2xl font-black text-white tracking-wider font-sans">dosko</span><span class="text-xs font-semibold text-slate-400 border-l border-slate-700 pl-2.5 py-0.5">(주)도스코</span></div>
+        </div>
+
+        <!-- 하단 메뉴 -->
+        <div class="flex flex-wrap gap-6 text-slate-400 font-medium">
+          <a href="#about" class="hover:text-white transition" data-i18n="nav_about">회사소개</a>
+          <a href="#products" class="hover:text-white transition" data-i18n="nav_products">제품소개</a>
+          <a href="#facility" class="hover:text-white transition" data-i18n="nav_facility">생산공정</a>
+          <a href="#contact" class="hover:text-white transition" data-i18n="nav_contact">고객문의</a>
+          <a href="#" class="hover:text-white transition" data-i18n="nav_privacy">개인정보처리방침</a>
+        </div>
+      </div>
+
+      <div class="pt-8 flex flex-col md:flex-row justify-between items-start md:items-center gap-4 text-xs text-slate-500">
+        <div class="leading-relaxed">
+          <p id="footer-corp-line"><span class="text-slate-300">상호명:</span> (주)도스코 | <span class="text-slate-300">대표자:</span> 조성대 | <span class="text-slate-300">사업자등록번호:</span> 134-81-23737</p>
+          <p id="footer-fax-line"><span class="text-slate-300">주소:</span> 경기도 안산시 단원구 신원로 133번길 84(신길동) | <span class="text-slate-300">TEL:</span> 031-493-3131 | <span class="text-slate-300">FAX:</span> 0507-891-0565 (인터넷) / 031-493-3237 (영업)</p>
+          <p class="mt-1">Copyright © (주)도스코 (DOSKO CO., LTD.) All Rights Reserved.</p>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <span class="inline-block w-2 h-2 rounded-full bg-emerald-500"></span>
+          <span class="text-slate-400">Mobile Responsive & Multi-Language System</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== SCRIPT (Multi-Language & Interactions) ==================== -->
+  <script>
+    // 강종 상세 데이터베이스 (모달 팝업용)
+    const productData = {
+      general: {
+        badge: "COMMERCIAL STEEL (201_02)",
+        title: "일반강 (Cold Rolled Commercial)",
+        img: "assets/images/201_02/01.jpg",
+        desc: "우수한 가공성, 균일한 표면 품질 및 높은 성형성을 갖춘 냉간압연 일반강입니다. 딥드로잉(Deep Drawing), 벤딩 가공에 탁월하며 자동차 차체 패널, 가전제품 외장재, 일반 건자재 등 광범위한 산업에 표준 강재로 적용됩니다.",
+        specs: ["SPCC", "SPCD", "SPCE", "SPCEN"],
+        table: [
+          { key: "생산 가능 두께", val: "0.10mm ~ 3.20mm (정밀 공차 관리)" },
+          { key: "생산 가능 폭", val: "5.0mm ~ 450.0mm (정밀 슬리팅)" },
+          { key: "표면 조도 / 마감", val: "Dull Finish (무광 조면), Bright Finish (유광 미려)" },
+          { key: "주요 용도", val: "자동차 내외장재, 전자제품 프레임, 오피스 가구, 파이프 모재" }
+        ]
+      },
+      carbon: {
+        badge: "CARBON STEEL (201_03)",
+        title: "기계구조용 탄소강 (Carbon Steel)",
+        img: "assets/images/201_03/01.jpg",
+        desc: "탄소 함유량 0.10% ~ 0.55%의 기계구조용 탄소강대로, 정밀 냉간압연 후 최적의 광휘소둔 열처리를 거쳐 공급됩니다. 열처리(퀜칭/템퍼링) 후 높은 인장강도와 내마모성을 발휘하여 강한 응력을 받는 기계 부품에 최적입니다.",
+        specs: ["S10C", "S20C", "S35C", "S45C", "S50C", "S55C"],
+        table: [
+          { key: "생산 가능 두께", val: "0.15mm ~ 2.50mm" },
+          { key: "생산 가능 폭", val: "5.0mm ~ 400.0mm" },
+          { key: "열처리 상태", val: "Annealed (소둔 연질재), Hard Rolled (경질재)" },
+          { key: "주요 용도", val: "자동차 구동계 부품, 와셔, 기어 부품, 정밀 체인 링크" }
+        ]
+      },
+      tool: {
+        badge: "TOOL STEEL (201_04)",
+        title: "탄소공구강 (Carbon Tool Steel)",
+        img: "assets/images/201_04/01.jpg",
+        desc: "0.60% ~ 1.50%의 고탄소 합금 설계를 통해 열처리 후 HRC 60 이상의 극대화된 표면 경도와 절삭 성능을 제공합니다. 톱날, 면도날, 산업용 특수 나이프 및 전단 가공용 공구강으로 공급됩니다.",
+        specs: ["SK4 (SK95)", "SK5 (SK85)", "SK7 (SK75)", "SK2 (SK120)"],
+        table: [
+          { key: "생산 가능 두께", val: "0.10mm ~ 2.00mm" },
+          { key: "경도 (열처리 후)", val: "HRC 55 ~ 63 (용도별 맞춤 제어)" },
+          { key: "특수 가공", val: "원형 엣지(Round Edge), 각 엣지(Square Edge) 정밀 슬리팅" },
+          { key: "주요 용도", val: "산업용 커터 나이프, 금속 톱날, 줄자, 정밀 펀칭 부품" }
+        ]
+      },
+      alloy_tool: {
+        badge: "ALLOY TOOL STEEL (201_05)",
+        title: "합금공구강 (Alloy Tool Steel)",
+        img: "assets/images/201_05/01.jpg",
+        desc: "탄소공구강에 크롬(Cr), 텅스텐(W), 바나듐(V)을 합금하여 내마모성과 인성, 담금질성을 획기적으로 개선한 고급 공구강입니다. 충격 하중이 반복적으로 가해지는 극한 환경에 이상적입니다.",
+        specs: ["SKS51", "SKS5", "SKS2", "SKS3"],
+        table: [
+          { key: "생산 가능 두께", val: "0.20mm ~ 2.50mm" },
+          { key: "합금 성분 특성", val: "Cr, Ni, V 첨가로 피로 한도 및 충격 인성 극대화" },
+          { key: "가공 정밀도", val: "두께 공차 ±0.005mm 범위 내 초정밀 관리" },
+          { key: "주요 용도", val: "목공용 밴드쏘 톱날, 석재 절단날, 고부하 공압 밸브 리드" }
+        ]
+      },
+      crmo: {
+        badge: "CR-MO ALLOY (201_06)",
+        title: "크롬몰리브덴강 (Chromium Molybdenum Steel)",
+        img: "assets/images/201_06/01.jpg",
+        desc: "크롬과 몰리브덴을 복합 첨가하여 심부까지 우수한 담금질 경화능을 확보한 특수강입니다. 표면 침탄 질화 처리에 적합하여 고온 피로 저항력과 내충격성이 뛰어난 안전 핵심 부품에 필수 적용됩니다.",
+        specs: ["SCM415", "SCM420", "SCM435", "SCM440"],
+        table: [
+          { key: "생산 가능 두께", val: "0.20mm ~ 3.00mm" },
+          { key: "주요 기계적 성질", val: "고인성, 내피로성, 우수한 침탄 열처리 적합성" },
+          { key: "공급 형태", val: "슬리팅 코일, 정밀 평판 시트" },
+          { key: "주요 용도", val: "자동차 안전벨트 리트랙터, 트랜스미션 부품, 베어링 와셔" }
+        ]
+      },
+      spring: {
+        badge: "SPRING STEEL (201_07)",
+        title: "스프링용 강대 (Spring Steel)",
+        img: "assets/images/201_07/01.jpg",
+        desc: "실리콘(Si), 망간(Mn), 크롬(Cr)을 첨가하여 높은 탄성 한계와 내피로성을 겸비한 특수 스프링 소재입니다. 반복적인 하중 굽힘 운동에도 영구 변형이 없어 정밀 기계 및 차량용 판스프링에 널리 사용됩니다.",
+        specs: ["SUP6", "SUP7", "SUP9", "SUP10"],
+        table: [
+          { key: "생산 가능 두께", val: "0.15mm ~ 2.50mm" },
+          { key: "탄성 한계 특성", val: "고탄성 소둔 및 열처리 경화 특성 우수" },
+          { key: "표면 상태", val: "무결점 미려 표면, 탈탄층 엄격 관리" },
+          { key: "주요 용도", val: "자동차 클러치 다이아프램 스프링, 도어락, 정밀 태엽" }
+        ]
+      },
+      sts: {
+        badge: "STAINLESS STEEL (201_08)",
+        title: "스테인리스 스틸 (Stainless Steel)",
+        img: "assets/images/201_08/01.jpg",
+        desc: "극박 정밀 압연 기술이 적용된 오스테나이트계 STS301, STS304 초정밀 스프링 박판(CSP)입니다. 탁월한 내식성과 고탄성 가공경화 특성을 보유하여 IT 스마트폰 내부 돔 스위치 및 정밀 전자기기 커넥터에 핵심 소재로 사용됩니다.",
+        specs: ["STS301 (CSP 1/2H, 3/4H, H, EH)", "STS304", "STS430"],
+        table: [
+          { key: "생산 가능 두께", val: "0.05mm ~ 1.50mm (초박판 압연)" },
+          { key: "조질 구분", val: "Annealed, 1/4H, 1/2H, 3/4H, Full Hard, Extra Hard" },
+          { key: "표면 조도", val: "2B, BA (Bright Annealed)" },
+          { key: "주요 용도", val: "스마트폰 메탈 돔 스위치, 정밀 단자 커넥터, 의료기기 부품" }
+        ]
+      }
+    };
+
+    // 제품 슬라이더 좌우 스크롤
+    function scrollProductSlider(direction) {
+      const slider = document.getElementById('product-slider');
+      const scrollAmount = 360;
+      slider.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+    }
+
+    // 강종 세부 모달 열기/닫기
+    function openProductDetail(gradeKey) {
+      const data = productData[gradeKey];
+      if (!data) return;
+
+      document.getElementById('modal-grade-badge').innerText = data.badge;
+      document.getElementById('modal-grade-title').innerText = data.title;
+      document.getElementById('modal-grade-img').src = data.img;
+      document.getElementById('modal-grade-desc').innerText = data.desc;
+
+      const specsContainer = document.getElementById('modal-grade-specs');
+      specsContainer.innerHTML = data.specs.map(s => `<span class="px-2.5 py-1 rounded bg-slate-100 text-slate-800 text-xs font-semibold">${s}</span>`).join('');
+
+      const tableContainer = document.getElementById('modal-grade-table');
+      tableContainer.innerHTML = data.table.map(row => `
+        <tr>
+          <td class="p-3 font-bold text-slate-800 bg-slate-50/50 w-1/3">${row.key}</td>
+          <td class="p-3 text-slate-600">${row.val}</td>
+        </tr>
+      `).join('');
+
+      document.getElementById('product-detail-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeProductDetail() {
+      document.getElementById('product-detail-modal').classList.add('hidden');
+    }
+
+    // 인증서 모달 및 필터
+    function openCertModal(imgSrc, title) {
+      document.getElementById('cert-modal-img').src = imgSrc;
+      document.getElementById('cert-modal-title').innerText = title;
+      document.getElementById('cert-modal').classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    function closeCertModal() {
+      document.getElementById('cert-modal').classList.add('hidden');
+    }
+
+    function filterCerts(category) {
+      const allBtn = document.getElementById('cert-tab-all');
+      const isoBtn = document.getElementById('cert-tab-iso');
+      const patentBtn = document.getElementById('cert-tab-patent');
+      const items = document.querySelectorAll('.cert-item');
+
+      [allBtn, isoBtn, patentBtn].forEach(b => {
+        b.className = "px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/10 text-slate-300 hover:bg-white/20 transition";
+      });
+
+      if (category === 'all') {
+        allBtn.className = "px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-sm transition";
+        items.forEach(el => el.classList.remove('hidden'));
+      } else if (category === 'iso') {
+        isoBtn.className = "px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-sm transition";
+        items.forEach(el => {
+          if (el.classList.contains('cert-iso')) el.classList.remove('hidden');
+          else el.classList.add('hidden');
+        });
+      } else if (category === 'patent') {
+        patentBtn.className = "px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-sm transition";
+        items.forEach(el => {
+          if (el.classList.contains('cert-patent')) el.classList.remove('hidden');
+          else el.classList.add('hidden');
+        });
+      }
+    }
+
+    // 생산 및 설비 탭 전환 함수
+    function switchFacilityTab(tabId) {
+      const tabs = ['flow', 'factory', 'package', 'equipment'];
+      tabs.forEach(id => {
+        const pane = document.getElementById(`tab-content-${id}`);
+        const btn = document.getElementById(`tab-btn-${id}`);
+        if (id === tabId) {
+          pane.classList.remove('hidden');
+          btn.className = "px-5 py-2.5 rounded-xl font-bold text-sm bg-brand-600 text-white shadow-sm transition";
+        } else {
+          pane.classList.add('hidden');
+          btn.className = "px-5 py-2.5 rounded-xl font-bold text-sm bg-slate-100 text-slate-700 hover:bg-slate-200 transition";
+        }
+      });
+    }
+
+    // 다국어 데이터 사전 (한국어 & 영어 완벽 번역)
+    const translations = {
+      ko: {
+        nav_about: "회사소개",
+        nav_products: "제품소개",
+        nav_facility: "생산 및 설비",
+        nav_certs: "인증 및 특허",
+        nav_quality: "품질/경영이념",
+        nav_contact: "고객상담/문의",
+        nav_privacy: "개인정보처리방침",
+        btn_inquiry: "온라인 견적상담",
+
+        cert_badge: "Certificates & Patents",
+        cert_title: "공인된 기술력과 품질 인증 & 특허 현황",
+        cert_subtitle: "ISO 9001/14001 국제 표준 인증 및 독자적인 특수강 압연·열처리 기술 특허로 글로벌 경쟁력을 입증합니다.",
+        btn_view_spec: "상세스펙 보기",
+
+        hero_badge: "특수강 냉간압연 전문기업",
+        hero_title_1: "특수마대강 열처리 외길을 걸어온 도스코.",
+        hero_title_2: "고품질의 다양한 열처리 제품을 생산<br class=\"hidden sm:inline\"/> 국내에서 전세계로 진출하고 있습니다.",
+        hero_desc: "일반강, 탄소강, 특수합금강, 스테인레스 스틸 정밀 압연 코일 생산으로 자동차, 전자, 정밀 기계 산업 발전을 함께합니다.",
+        hero_cta_product: "주요 제품 살펴보기",
+        hero_cta_contact: "견적 문의: 031-493-3131",
+
+        stat_1: "30년+ 특수강 압연 노하우",
+        stat_2: "국제 품질경영시스템 인증",
+        stat_3: "초정밀 두께 공차 관리",
+        stat_4: "국내 및 해외 직수출 대응",
+
+        about_badge: "About DOSKO",
+        about_title: "한 발 앞선 비즈니스를 통해 고객에게 최고의 가치를 제공합니다",
+        about_subtitle: "(주)도스코는 30여 년간 축적된 냉간압연 기술력을 바탕으로 대한민국 정밀 부품 산업의 근간을 함께해 왔습니다.",
+        ceo_heading: '"정직한 기술과 끊임없는 혁신으로 고객 감동을 실현하겠습니다."',
+        ceo_subheading: "(주)도스코 홈페이지를 찾아주신 고객 여러분을 진심으로 환영합니다.",
+        ceo_message: '<p>(주)도스코는 급변하는 글로벌 산업 환경 속에서도 오직 특수강 냉간압연 코일 분야의 전문화와 기술 혁신에 전념해 왔습니다. 고객이 요구하는 가혹한 물성과 까다로운 규격 조건을 정확하게 실현하기 위해 지속적인 설비 투자와 첨단 품질관리 시스템을 구축하였습니다.</p><p>자동차, 정밀 전자, 기계 산업의 핵심 소재로서 단 1미크론의 오차도 허용하지 않는 엄격한 정밀 두께 공차(±0.005mm)와 최적의 열처리 평탄도를 구현함으로써 고객사의 제조 공정 안정화와 원가 절감에 실질적인 기여를 해오고 있습니다.</p><p>앞으로도 고객과의 작은 약속 하나도 소중히 여기며, 소량 다품종 맞춤형 주문부터 신속한 양산 납기까지 신뢰와 상생의 가치로 보답하는 최고의 파트너가 될 것을 약속드립니다.</p>',
+        cap_1: "±0.005mm 초정밀 압연",
+        cap_2: "광휘 소둔 무산화 열처리",
+        cap_3: "신속한 납기 및 수출 지원",
+        ceo_role: "Representative Director",
+        ceo_name: "대표이사 조성대",
+        ceo_company_title: "(주)도스코 DOSKO CO., LTD.<br/>안산 반월국가산업단지",
+
+        prod_badge: "Products Lineup",
+        prod_title: "도스코 정밀 특수강 제품 소개",
+        prod_subtitle: "고객의 다양한 용도와 성능 기준에 맞춰 최적의 물성을 가진 강종을 공급합니다.",
+        
+        // 제품 1 (탄소강)
+        prod_c1_badge: "SK5 / SK7 / S55C",
+        prod_c1_title: "탄소강 & 탄소공구강",
+        prod_c1_desc: "내마모성과 열처리 경화능이 우수하며 자동차 부품, 톱날, 산업용 커터, 스프링류에 널리 사용됩니다.",
+        prod_c1_tag1: "S45C~S55C",
+        prod_c1_tag2: "SK4 / SK5",
+        prod_c1_tag3: "고탄소 압연강",
+
+        // 제품 2 (합금강)
+        prod_c2_badge: "SCM415 / SCM435",
+        prod_c2_title: "합금강 & 크롬몰리브덴강",
+        prod_c2_desc: "인성과 피로강도가 우수하여 고응력이 집중되는 자동차 안전부품, 기어류, 베어링 부품에 최적화되어 있습니다.",
+        prod_c2_tag1: "SCM 계열",
+        prod_c2_tag2: "SKS 계열",
+        prod_c2_tag3: "특수 합금압연",
+
+        // 제품 3 (스프링/스테인레스강)
+        prod_c3_badge: "SUS301 / SUP 계열",
+        prod_c3_title: "스프링강 & 스테인리스 스틸",
+        prod_c3_desc: "탄성 한계와 내부식성이 뛰어나 정밀 전자 스위치 돔, 도어락 스프링, 플랫 와셔 등 정밀 부품에 공급됩니다.",
+        prod_c3_tag1: "SUP9 / SUP10",
+        prod_c3_tag2: "STS301 / 304",
+        prod_c3_tag3: "정밀 스프링 박판",
+
+        spec_title: "가공 규격 및 공차 안내",
+        spec_desc: "두께공차, 폭공차, 화학성분 분석표 및 경도 환산표 등 상세 기술자료를 지원합니다.",
+        spec_btn: "상세 기술규격 문의하기",
+
+        fac_badge: "Manufacturing & Facilities",
+        fac_title: "생산 및 설비 현황",
+        fac_subtitle: "도스코만의 정밀 냉간압연 공정도, 생산현장, 포장출하 및 공인 설비현황을 원본 그대로 투명하게 안내합니다.",
+        tab_flow: "1. 공정도",
+        tab_factory: "2. 생산현장",
+        tab_package: "3. 포장 및 출하",
+        tab_equipment: "4. 설비현황",
+
+        flow_title: "전체 공정도 (Manufacturing Process)",
+        flow_subtitle: "원소재 입고부터 정밀 압연, 열처리, 연마, 슬리팅, 검사 및 출하까지의 표준화된 공정 순서입니다.",
+        proc_step1_title: "압연, 소둔, 절단",
+        proc_step1_desc: "Cold Rolling Mill",
+        proc_step2_title: "열처리(납,오일,수냉)",
+        proc_step2_desc: "Heat Treatment (Lead / Oil / Water)",
+        proc_step3_title: "연마",
+        proc_step3_desc: "Grinding & Surface Polishing",
+        proc_step4_title: "검사 및 포장출하",
+        proc_step4_desc: "Final Inspection & Packaging",
+        factory_title: "생산현장 (Factory & Production Floor)",
+        factory_subtitle: "도스코 안산 반월공장 내 실제 정밀 압연기, 열처리로 및 슬리터 가동 현장입니다.",
+        package_title: "포장 및 출하 (Packaging & Logistics)",
+        package_subtitle: "부식 방지 특수 방청지 포장 및 충격 방지 밴딩을 거쳐 국내외로 안전하게 출하됩니다.",
+        equip_title: "설비현황 (Facilities & Inspection Equipment)",
+        equip_subtitle: "압연기, 소둔로, 슬리터 등 생산설비와 인장시험기, 경도계 등 정밀 검사설비 제원표입니다.",
+
+        q_1_title: "품질제일주의",
+        q_1_desc: "엄격한 통계적 공정관리(SPC)와 ISO 9001 품질 표준을 준수하여 불량률 제로화를 실현합니다.",
+        q_2_title: "고객 납기 우선",
+        q_2_desc: "신속한 원자재 수급망과 탄력적인 생산 설비 운영으로 고객사의 촉박한 일정에도 완벽 대응합니다.",
+        q_3_title: "신뢰와 상생",
+        q_3_desc: "단순 납품을 넘어 고객 제품의 원가 절감과 생산성 향상을 함께 연구하는 기술 파트너가 됩니다.",
+
+        contact_badge: "Contact Us",
+        contact_title: "견적 및 제품 상담문의",
+        contact_subtitle: "도스코의 숙련된 엔지니어와 영업 전문가가 고객님의 사양에 맞는 최적의 제품을 친절하게 상담해 드립니다.",
+        c_phone: "대표 전화",
+        c_phone_val: "031-493-3131",
+        c_fax: "팩스 번호",
+        c_fax_val: '<span class="font-bold text-slate-900">0507-891-0565</span> (인터넷팩스 / 대표)<br/><span>031-493-3237</span> (국내영업)',
+        c_email: "이메일 문의",
+        c_email_val: '국내영업: <a href="mailto:sales@dosko.co.kr" class="text-brand-600 underline">sales@dosko.co.kr</a><br/>해외수출: <a href="mailto:dosko.e@dosko.co.kr" class="text-brand-600 underline">dosko.e@dosko.co.kr</a>',
+        c_address: "본사 및 공장 주소",
+        c_addr_val: "[15407] 경기도 안산시 단원구 신원로 133번길 84 (신길동, 반월국가산업단지)",
+
+        form_title: "온라인 견적 및 상담 접수",
+        form_desc: "문의 내용을 남겨주시면 담당자가 빠른 시일 내에 연락드립니다.",
+        f_company: "회사명 *",
+        f_name: "담당자명 *",
+        f_phone: "연락처 *",
+        f_email: "이메일 *",
+        f_category: "문의 강종 / 분야",
+        f_content: "문의 내용 및 규격 (두께/폭/수량 등) *",
+        f_submit: "문의 내용 발송하기"
+      },
+      en: {
+        nav_about: "About Us",
+        nav_products: "Products",
+        nav_facility: "Facilities",
+        nav_certs: "Certificates & Patents",
+        nav_quality: "Quality",
+        nav_contact: "Contact",
+        nav_privacy: "Privacy Policy",
+        btn_inquiry: "Get a Quote",
+
+        cert_badge: "Certificates & Patents",
+        cert_title: "Certified Technology & Patents",
+        cert_subtitle: "Proving global competitiveness with ISO 9001/14001 standards and proprietary cold rolling patents.",
+        btn_view_spec: "View Specs",
+
+        hero_badge: "Cold Rolled Special Steel Leader",
+        hero_title_1: "DOSKO: Dedicated Leader in Heat-Treated Special Strip Steel",
+        hero_title_2: "Producing High-Quality Heat-Treated Products, Advancing Worldwide from Korea",
+        hero_desc: "Specialized in precision cold-rolled carbon steel, alloy steel, and stainless steel strip coils for automotive, electronics, and precision machinery.",
+        hero_cta_product: "Explore Products",
+        hero_cta_contact: "Inquiry: +82-31-493-3131",
+
+        stat_1: "30+ Years Precision Know-how",
+        stat_2: "ISO 9001 Quality Certified",
+        stat_3: "Ultra-precise Thickness Tolerance",
+        stat_4: "Global Export & OEM Supply",
+
+        about_badge: "About DOSKO",
+        about_title: "Delivering Maximum Value to Global Customers through Advanced Business",
+        about_subtitle: "DOSKO CO., LTD. has contributed to global precision component manufacturing through 30+ years of cold rolling expertise.",
+        ceo_heading: '"Realizing Customer Satisfaction through Honest Technology and Continuous Innovation."',
+        ceo_subheading: "Welcome to DOSKO CO., LTD. - Your Trusted Special Steel Partner.",
+        ceo_message: '<p>DOSKO CO., LTD. has focused on technological innovation and specialization in cold-rolled precision special steel coils amidst rapid global market changes. We continuously invest in advanced rolling mills, bell-type bright annealing systems, and state-of-the-art QC laboratories to meet demanding customer specifications.</p><p>As critical materials for automotive safety components, high-end electronics, and industrial machinery, we strictly guarantee thickness tolerances within ±0.005mm and optimal surface flatness, delivering substantial cost savings and process stability to our partners worldwide.</p><p>We value every single promise with our clients. From fast sampling of high-mix low-volume orders to full-scale mass production, DOSKO commits to being your most dependable long-term partner.</p>',
+        cap_1: "±0.005mm Precision Rolling",
+        cap_2: "Bright Annealing Furnace",
+        cap_3: "Fast Global Delivery",
+        ceo_role: "CEO & President",
+        ceo_name: "Sung-Dae Cho",
+        ceo_company_title: "DOSKO CO., LTD.<br/>Banwol Industrial Complex, Korea",
+
+        prod_badge: "Products Lineup",
+        prod_title: "Precision Cold Rolled Steel Products",
+        prod_subtitle: "Supplying optimized steel grades tailored to demanding customer applications.",
+        
+        // 제품 1 (탄소강 영문)
+        prod_c1_badge: "SK5 / SK7 / S55C",
+        prod_c1_title: "Carbon & Tool Steel",
+        prod_c1_desc: "Outstanding wear resistance and heat treatability, widely used for automotive parts, saw blades, industrial cutters, and precision springs.",
+        prod_c1_tag1: "S45C ~ S55C",
+        prod_c1_tag2: "SK4 / SK5 / SK85",
+        prod_c1_tag3: "High Carbon Steel Strips",
+
+        // 제품 2 (합금강 영문)
+        prod_c2_badge: "SCM415 / SCM435",
+        prod_c2_title: "Alloy & Cr-Mo Steel",
+        prod_c2_desc: "High toughness and fatigue strength, optimal for safety-critical automotive components, transmission gears, and bearing washers.",
+        prod_c2_tag1: "SCM Series (Cr-Mo)",
+        prod_c2_tag2: "SKS Series (Tool Alloy)",
+        prod_c2_tag3: "High-Strength Alloy Coils",
+
+        // 제품 3 (스프링/스테인레스강 영문)
+        prod_c3_badge: "SUS301 / SUP Series",
+        prod_c3_title: "Spring Steel & Stainless Steel",
+        prod_c3_desc: "Superior elastic limit and corrosion resistance for electronic tactile domes, door lock springs, and ultra-thin precision washers.",
+        prod_c3_tag1: "SUP9 / SUP10",
+        prod_c3_tag2: "STS301 / STS304",
+        prod_c3_tag3: "Ultra-Thin Precision Strips",
+
+        spec_title: "Standard Specifications & Tolerances",
+        spec_desc: "Thickness tolerances, width tolerances, chemical composition analysis, and hardness conversion charts available.",
+        spec_btn: "Request Technical Datasheet",
+
+        fac_badge: "Manufacturing & Facilities",
+        fac_title: "Production & Facilities Overview",
+        fac_subtitle: "Transparent presentation of DOSKO's cold rolling process flow, production floor, packaging, and certified equipment specs.",
+        tab_flow: "1. Process Flow",
+        tab_factory: "2. Production Floor",
+        tab_package: "3. Packaging & Logistics",
+        tab_equipment: "4. Facilities & Specs",
+
+        flow_title: "Overall Manufacturing Process Flow Chart",
+        flow_subtitle: "Standardized manufacturing flow from raw coil receiving to rolling, annealing, grinding, slitting, QC, and dispatch.",
+        proc_step1_title: "Rolling, Annealing & Slitting",
+        proc_step1_desc: "Precision Cold Rolling Mill",
+        proc_step2_title: "Heat Treatment (Lead/Oil/Water)",
+        proc_step2_desc: "Quenching & Tempering (Lead / Oil / Water)",
+        proc_step3_title: "Grinding & Polishing",
+        proc_step3_desc: "High-precision Surface Grinding (Dual Units)",
+        proc_step4_title: "Inspection & Shipping",
+        proc_step4_desc: "100% Final Inspection & Secure Packaging",
+        factory_title: "Production Floor (Facilities in Operation)",
+        factory_subtitle: "Actual cold rolling mills, bell annealing furnaces, and slitting lines at our Banwol plant.",
+        package_title: "Packaging & Logistics",
+        package_subtitle: "Anti-rust paper wrapping and high-tensile steel strapping for secure domestic and global freight.",
+        equip_title: "Facilities & Testing Equipment",
+        equip_subtitle: "Detailed engineering specifications for rolling mills, annealing lines, slitters, and lab testers.",
+
+        q_1_title: "Quality First",
+        q_1_desc: "Executing statistical process control (SPC) and ISO 9001 standards to achieve zero defects.",
+        q_2_title: "On-time Delivery",
+        q_2_desc: "Prompt raw material sourcing and flexible production lines to satisfy urgent customer schedules.",
+        q_3_title: "Trust & Mutual Growth",
+        q_3_desc: "A reliable technology partner researching cost reduction and productivity enhancement together.",
+
+        contact_badge: "Contact Us",
+        contact_title: "Inquiries & Quotations",
+        contact_subtitle: "DOSKO's experienced engineering and sales team will assist you with the optimal product specs.",
+        c_phone: "Telephone",
+        c_phone_val: "+82-31-493-3131",
+        c_fax: "Fax Number",
+        c_fax_val: '<span class="font-bold text-slate-900">+82-31-493-3237</span> (International Main)<br/><span class="text-slate-500">+82-507-891-0565 (E-Fax)</span>',
+        c_email: "Email Inquiries",
+        c_email_val: 'Domestic: <a href="mailto:sales@dosko.co.kr" class="text-brand-600 underline">sales@dosko.co.kr</a><br/>Overseas: <a href="mailto:dosko.e@dosko.co.kr" class="text-brand-600 underline">dosko.e@dosko.co.kr</a>',
+        c_address: "Headquarters & Plant",
+        c_addr_val: "84, Sinwon-ro 133beon-gil, Danwon-gu, Ansan-si, Gyeonggi-do, 15407, Republic of Korea",
+
+        form_title: "Online Quotation Request",
+        form_desc: "Please submit your specifications. Our representative will contact you promptly.",
+        f_company: "Company Name *",
+        f_name: "Contact Person *",
+        f_phone: "Phone Number *",
+        f_email: "Email Address *",
+        f_category: "Steel Grade / Category",
+        f_content: "Specifications & Request (Thickness/Width/Qty) *",
+        f_submit: "Submit Inquiry"
+      }
+    };
+
+    let currentLang = 'ko';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const dict = translations[lang];
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            el.placeholder = dict[key];
+          } else {
+            el.innerHTML = dict[key];
+          }
+        }
+      });
+
+      // 폼 셀렉트 박스 및 텍스트에어리어 영문/국문 옵션 갱신
+      const selectBox = document.getElementById('form-category-select');
+      const textareaBox = document.getElementById('form-content-textarea');
+      if (selectBox) {
+        if (lang === 'ko') {
+          selectBox.innerHTML = `
+            <option value="carbon">탄소강 / 탄소공구강 (SK5, S55C 등)</option>
+            <option value="alloy">합금강 / 크롬몰리브덴강 (SCM415, SCM435 등)</option>
+            <option value="spring">스프링강 / 스테인레스 스틸 (SUP, STS301 등)</option>
+            <option value="other">기타 정밀 압연 및 슬리팅 문의</option>
+          `;
+          textareaBox.placeholder = "필요하신 두께, 폭, 용도 등을 기재해 주시면 신속한 견적이 가능합니다.";
+        } else {
+          selectBox.innerHTML = `
+            <option value="carbon">Carbon / Tool Steel (SK5, S55C, etc.)</option>
+            <option value="alloy">Alloy / Cr-Mo Steel (SCM415, SCM435, etc.)</option>
+            <option value="spring">Spring Steel / Stainless Steel (SUP, STS301, etc.)</option>
+            <option value="other">Other Precision Rolling & Slitting Inquiries</option>
+          `;
+          textareaBox.placeholder = "Please enter your required thickness, width, steel grade, and application for a quick quotation.";
+        }
+      }
+
+      // 푸터 팩스 및 기업정보 라인 변경
+      const footerCorp = document.getElementById('footer-corp-line');
+      const footerFax = document.getElementById('footer-fax-line');
+      if (lang === 'ko') {
+        if (footerCorp) footerCorp.innerHTML = '<span class="text-slate-300">상호명:</span> (주)도스코 | <span class="text-slate-300">대표자:</span> 조성대 | <span class="text-slate-300">사업자등록번호:</span> 134-81-23737';
+        if (footerFax) footerFax.innerHTML = '<span class="text-slate-300">주소:</span> 경기도 안산시 단원구 신원로 133번길 84(신길동) | <span class="text-slate-300">TEL:</span> 031-493-3131 | <span class="text-slate-300">FAX:</span> 0507-891-0565 (인터넷) / 031-493-3237 (영업)';
+        document.documentElement.lang = 'ko';
+      } else {
+        if (footerCorp) footerCorp.innerHTML = '<span class="text-slate-300">Company:</span> DOSKO CO., LTD. | <span class="text-slate-300">CEO:</span> Sung-Dae Cho | <span class="text-slate-300">Business Reg:</span> 134-81-23737';
+        if (footerFax) footerFax.innerHTML = '<span class="text-slate-300">Address:</span> 84, Sinwon-ro 133beon-gil, Danwon-gu, Ansan-si, Korea | <span class="text-slate-300">TEL:</span> +82-31-493-3131 | <span class="text-slate-300">FAX:</span> +82-31-493-3237';
+        document.documentElement.lang = 'en';
+      }
+
+      // 버튼 스타일 토글
+      const btnKo = document.getElementById('btn-ko');
+      const btnEn = document.getElementById('btn-en');
+      if (lang === 'ko') {
+        btnKo.className = "px-3 py-1.5 rounded-full bg-brand-600 text-white shadow-sm transition";
+        btnEn.className = "px-3 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition";
+      } else {
+        btnEn.className = "px-3 py-1.5 rounded-full bg-brand-600 text-white shadow-sm transition";
+        btnKo.className = "px-3 py-1.5 rounded-full text-slate-600 hover:text-slate-900 transition";
+      }
+
+      // 아이콘 리프레시
+      lucide.createIcons();
+    }
+
+    // 모바일 메뉴 토글
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+
+    // 문의 폼 처리 데모
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const form = e.target;
+      const inputs = form.querySelectorAll('input, select, textarea');
+      const data = {};
+      inputs.forEach(input => {
+        if (input.name) data[input.name] = input.value;
+      });
+
+      const company = form.querySelector('[data-field="company"]')?.value || form.elements[0]?.value || '';
+      const name = form.querySelector('[data-field="name"]')?.value || form.elements[1]?.value || '';
+      const phone = form.querySelector('[data-field="phone"]')?.value || form.elements[2]?.value || '';
+      const email = form.querySelector('[data-field="email"]')?.value || form.elements[3]?.value || '';
+      const msgText = form.querySelector('textarea')?.value || '';
+
+      const confirmMsg = currentLang === 'ko'
+        ? "문의 내용을 도스코 영업팀 이메일(dosko1@dosko.co.kr)로도 함께 전송하시겠습니까?"
+        : "Would you also like to open your email client to send this inquiry directly to DOSKO Sales Team (dosko1@dosko.co.kr)?";
+
+      const alertMsg = currentLang === 'ko'
+        ? "상담 문의가 접수되었습니다. 영업 담당자가 신속히 검토 후 연락드리겠습니다."
+        : "Your inquiry has been registered. Our sales representative will contact you shortly.";
+
+      alert(alertMsg);
+
+      if (confirm(confirmMsg)) {
+        const subject = encodeURIComponent(`[도스코 견적문의] ${company} - ${name} 귀하`);
+        const body = encodeURIComponent(`회사명: ${company}
+담당자명: ${name}
+연락처: ${phone}
+이메일: ${email}
+
+[문의 내용]
+${msgText}`);
+        window.location.href = `mailto:dosko1@dosko.co.kr?subject=${subject}&body=${body}`;
+      }
+
+      form.reset();
+    }
+
+    // 초기화
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+    });
+  </script>
+</body>
+</html>
