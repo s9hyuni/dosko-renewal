@@ -136,10 +136,10 @@
         <span data-i18n="hero_badge">Global Cold Rolled Steel Leader</span>
       </div>
 
-      <h1 class="text-xl sm:text-3xl md:text-5xl lg:text-5xl xl:text-6xl font-extrabold tracking-tight leading-snug sm:leading-tight max-w-5xl mx-auto mb-6 break-keep">
-        <span class="inline-block sm:whitespace-nowrap" data-i18n="hero_title_1">특수마대강 열처리 외길을 걸어온 도스코.</span><br class="hidden sm:inline"/>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-sky-200 to-white inline-block sm:whitespace-nowrap" data-i18n="hero_title_2">고품질의 다양한 열처리 제품을 생산</span><br class="hidden sm:inline"/>
-        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-sky-200 to-white inline-block sm:whitespace-nowrap" data-i18n="hero_title_3">국내에서 전세계로 진출하고 있습니다.</span>
+      <h1 class="text-xl sm:text-2xl md:text-4xl lg:text-5xl xl:text-5xl font-extrabold tracking-tight leading-snug sm:leading-tight max-w-5xl mx-auto mb-6 break-keep px-2">
+        <span class="inline-block break-words" data-i18n="hero_title_1">특수마대강 열처리 외길을 걸어온 도스코.</span><br class="hidden md:inline"/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-sky-200 to-white inline-block break-words" data-i18n="hero_title_2">고품질의 다양한 열처리 제품을 생산</span><br class="hidden md:inline"/>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-300 via-sky-200 to-white inline-block break-words" data-i18n="hero_title_3">국내에서 전세계로 진출하고 있습니다.</span>
       </h1>
 
       <p class="text-base sm:text-xl text-slate-200 max-w-2xl mx-auto mb-10 leading-relaxed font-light" data-i18n="hero_desc">
@@ -508,10 +508,10 @@
         <div class="flex flex-col sm:flex-row gap-6 items-center">
           <img id="modal-grade-img" src="" alt="강종 코일" class="w-full sm:w-64 h-48 object-cover rounded-2xl border border-slate-200 shadow-sm shrink-0">
           <div class="space-y-3">
-            <h5 class="text-sm font-bold text-slate-700 uppercase tracking-wider">주요 특징 및 물성</h5>
+            <h5 class="text-sm font-bold text-slate-700 uppercase tracking-wider" data-i18n="modal_title_feature">주요 특징 및 물성</h5>
             <p id="modal-grade-desc" class="text-sm text-slate-600 leading-relaxed"></p>
             <div class="pt-2">
-              <span class="text-xs font-bold text-slate-500 uppercase">대표 규격:</span>
+              <span class="text-xs font-bold text-slate-500 uppercase" data-i18n="modal_std_spec">대표 규격:</span>
               <div id="modal-grade-specs" class="flex flex-wrap gap-1.5 mt-1"></div>
             </div>
           </div>
@@ -522,8 +522,8 @@
           <table class="w-full text-left text-xs sm:text-sm">
             <thead class="bg-slate-100 border-b border-slate-200 font-bold text-slate-700">
               <tr>
-                <th class="p-3">항목</th>
-                <th class="p-3">도스코 공급 사양</th>
+                <th class="p-3" data-i18n="modal_th_item">항목</th>
+                <th class="p-3" data-i18n="modal_th_spec">도스코 공급 사양</th>
               </tr>
             </thead>
             <tbody id="modal-grade-table" class="divide-y divide-slate-100 text-slate-600">
@@ -533,7 +533,7 @@
 
         <div class="flex justify-end gap-3 pt-2">
           <button onclick="closeProductDetail()" class="px-5 py-2.5 rounded-xl border border-slate-300 text-slate-700 text-sm font-semibold hover:bg-slate-50 transition">닫기</button>
-          <a href="#contact" onclick="closeProductDetail()" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition shadow-md">이 강종으로 견적 문의하기</a>
+          <a href="#contact" onclick="closeProductDetail()" class="px-6 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold transition shadow-md" data-i18n="modal_inquiry_btn">이 강종으로 견적 문의하기</a>
         </div>
       </div>
     </div>
@@ -710,9 +710,9 @@
 
         <!-- 인증/특허 필터 탭 -->
         <div class="flex items-center justify-center gap-3 mt-8">
-          <button onclick="filterCerts('all')" id="cert-tab-all" class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-sm transition">전체보기</button>
-          <button onclick="filterCerts('iso')" id="cert-tab-iso" class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/10 text-slate-300 hover:bg-white/20 transition">품질·환경경영인증 (ISO)</button>
-          <button onclick="filterCerts('patent')" id="cert-tab-patent" class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/10 text-slate-300 hover:bg-white/20 transition">특허 및 기술인증</button>
+          <button onclick="filterCerts('all')" id="cert-tab-all" class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-brand-600 text-white shadow-sm transition" data-i18n="cert_tab_all">전체보기</button>
+          <button onclick="filterCerts('iso')" id="cert-tab-iso" class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/10 text-slate-300 hover:bg-white/20 transition" data-i18n="cert_tab_iso">품질·환경경영인증 (ISO)</button>
+          <button onclick="filterCerts('patent')" id="cert-tab-patent" class="px-5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-white/10 text-slate-300 hover:bg-white/20 transition" data-i18n="cert_tab_patent">특허 및 기술인증</button>
         </div>
       </div>
 
@@ -1067,7 +1067,7 @@
           { key: "주요 용도", val: "산업용 톱날, 문구용 칼날, 클러치 디스크, 정밀 게이지판" }
         ]
       },
-      alloy: {
+      alloy_tool: {
         badge: "ALLOY TOOL STEEL (201_05)",
         title: "합금공구강 (Alloy Tool Steel)",
         img: "assets/images/201_05/01.jpg",
@@ -1080,43 +1080,43 @@
           { key: "주요 용도", val: "정밀 펀칭 금형, 금속 절단용 톱, 원형 톱날, 농기계 부품" }
         ]
       },
-      bearing: {
-        badge: "BEARING STEEL (201_06)",
-        title: "고탄소 베어링강 (Bearing Steel)",
+      crmo: {
+        badge: "CR-MO ALLOY STEEL (201_06)",
+        title: "크롬몰리브덴 합금강 (Cr-Mo Steel)",
         img: "assets/images/201_06/01.jpg",
-        desc: "초고청정도 크롬강으로 불순물(비금속 개재물)을 극한으로 제어하여 반복적인 회전 응력 하에서도 높은 전동 피로 수명을 자랑합니다. 정밀 베어링 궤도륜, 바늘 베어링 롤러 및 정밀 스핀들 부품에 적용됩니다.",
-        specs: ["SUJ2 (100Cr6)", "SUJ3", "SUJ4"],
+        desc: "크롬(Cr)과 몰리브덴(Mo)이 함유되어 강도, 인성, 내충격성이 매우 우수한 합금강입니다. 고온 고압 및 고하중 환경에서도 크랙 발생을 억제하며 자동차 축, 기계 구조체, 안전벨트 버클 등에 사용됩니다.",
+        specs: ["SCM415", "SCM420", "SCM435", "SCM440"],
         table: [
-          { key: "생산 가능 두께", val: "0.25mm ~ 2.00mm" },
-          { key: "생산 가능 폭", val: "8.0mm ~ 280.0mm" },
-          { key: "품질 관리", val: "비금속 개재물 엄격 관리, 초정밀 두께 공차 ±0.005mm" },
-          { key: "주요 용도", val: "니들 베어링, 가이드웨이 플레이트, 정밀 로봇 감속기 부품" }
+          { key: "생산 가능 두께", val: "0.20mm ~ 2.50mm" },
+          { key: "생산 가능 폭", val: "8.0mm ~ 350.0mm" },
+          { key: "열처리 특성", val: "침탄열처리 및 조질(QT) 열처리 대응" },
+          { key: "주요 용도", val: "자동차 구동축, 안전벨트 버클, 정밀 기어, 고강도 체인" }
         ]
       },
-      stainless: {
-        badge: "STAINLESS STEEL (201_07)",
-        title: "오스테나이트 / 마르텐사이트 스테인레스 (STS)",
+      spring: {
+        badge: "SPRING STEEL (201_07)",
+        title: "스프링용 강대 (Spring Steel)",
         img: "assets/images/201_07/01.jpg",
-        desc: "크롬과 니켈을 함유하여 우수한 내식성과 아름다운 표면 광택을 자랑합니다. 가공경화를 이용한 고탄성 스프링재(STS301 CSP) 및 열처리 경화가 가능한 마르텐사이트계(STS420J2)를 최적의 정밀도로 공급합니다.",
-        specs: ["SUS301 CSP", "SUS304", "SUS420J2", "SUS430"],
+        desc: "높은 탄성 한도와 피로 수명을 자랑하는 규소-망간계 스프링 강대입니다. 반복적인 굽힘 및 비틀림 하중에서도 영구 변형 없이 원형 복원력을 유지하므로 고정밀 스프링 및 판스프링에 적합합니다.",
+        specs: ["SUP6", "SUP9", "SUP10"],
+        table: [
+          { key: "생산 가능 두께", val: "0.15mm ~ 2.20mm" },
+          { key: "생산 가능 폭", val: "5.0mm ~ 320.0mm" },
+          { key: "특징", val: "극저 비금속 개재물, 고탄성 피로한도 보장" },
+          { key: "주요 용도", val: "자동차 클러치 다이어프램, 밸브 스프링, 판스프링, 도어록" }
+        ]
+      },
+      sts: {
+        badge: "STAINLESS STEEL (201_08)",
+        title: "스테인리스 스틸 (Stainless Steel)",
+        img: "assets/images/201_08/01.jpg",
+        desc: "우수한 내식성, 내열성 및 미려한 표면 광택을 보유한 정밀 스테인레스 냉간압연 코일입니다. 초박판 정밀 압연을 통해 스마트폰 돔스위치, 전자기기 초정밀 부품, 의료기기 등에 공급됩니다.",
+        specs: ["STS301 CSP", "STS304", "STS420J2", "STS430"],
         table: [
           { key: "생산 가능 두께", val: "0.05mm ~ 1.50mm (초박판 압연 대응)" },
           { key: "생산 가능 폭", val: "3.0mm ~ 400.0mm" },
-          { key: "조질 상태", val: "1/2H, 3/4H, FH, EH (초경질)" },
-          { key: "주요 용도", val: "스마트폰 카메라 부품, 돔 스위치, 와이퍼 블레이드 스프링" }
-        ]
-      },
-      ribbon: {
-        badge: "HARDENED STRIP (201_08)",
-        title: "열처리 리본강 (Quenched & Tempered Ribbon Strip)",
-        img: "assets/images/201_08/01.jpg",
-        desc: "도스코가 자랑하는 특수 연속 오일/수냉 퀜칭 & 템퍼링 설비를 통과하여 즉시 사용 가능한 상태로 공급되는 열처리 강대입니다. 뛰어난 직진도, 완벽한 평탄도, 고경도 및 강인한 탄성을 자랑합니다.",
-        specs: ["SK85 Q&T", "S60C Q&T", "S70C Q&T", "SK95 Q&T"],
-        table: [
-          { key: "생산 가능 두께", val: "0.15mm ~ 1.80mm" },
-          { key: "생산 가능 폭", val: "4.0mm ~ 300.0mm" },
-          { key: "표면 색상", val: "Blue Polished (청색), Bright Polished (백색), Golden" },
-          { key: "주요 용도", val: "줄자(Tape measure), 셔터 스프링, 콘크리트 미장칼, 특수 칼날" }
+          { key: "조질 상태", val: "1/2H, 3/4H, Full Hard (FH), Extra Hard (EH)" },
+          { key: "주요 용도", val: "스마트폰 카메라 부품, 돔 스위치, 와이퍼 블레이드, 전자 커넥터" }
         ]
       }
     },
@@ -1125,7 +1125,7 @@
         badge: "COMMERCIAL STEEL (201_02)",
         title: "Cold Rolled Commercial Steel",
         img: "assets/images/201_02/01.jpg",
-        desc: "Cold-rolled standard steel featuring superior formability, uniform surface texture, and excellent deep drawing capability. Widely used across diverse industries including automotive body panels, home appliances, and building materials.",
+        desc: "Cold-rolled standard steel featuring superior formability, uniform surface texture, and excellent deep drawing capability. Widely used across automotive panels, appliances, and building materials.",
         specs: ["SPCC", "SPCD", "SPCE", "SPCEN"],
         table: [
           { key: "Available Thickness", val: "0.10mm ~ 3.20mm (Ultra-precision tolerance)" },
@@ -1160,7 +1160,7 @@
           { key: "Key Applications", val: "Industrial saw blades, utility knives, clutch plates, feeler gauges" }
         ]
       },
-      alloy: {
+      alloy_tool: {
         badge: "ALLOY TOOL STEEL (201_05)",
         title: "Alloy Tool Steel (SKD / SKS)",
         img: "assets/images/201_05/01.jpg",
@@ -1173,43 +1173,43 @@
           { key: "Key Applications", val: "Precision stamping tools, metal cutting saws, circular saws" }
         ]
       },
-      bearing: {
-        badge: "BEARING STEEL (201_06)",
-        title: "High Carbon Bearing Steel (SUJ2)",
+      crmo: {
+        badge: "CR-MO ALLOY STEEL (201_06)",
+        title: "Chromium Molybdenum Alloy Steel",
         img: "assets/images/201_06/01.jpg",
-        desc: "Ultra-pure chromium steel with minimal non-metallic inclusions, ensuring prolonged rolling fatigue life under high cyclic stress. Engineered for precision bearing raceways and high-accuracy spindles.",
-        specs: ["SUJ2 (100Cr6)", "SUJ3", "SUJ4"],
+        desc: "Alloy steel containing Cr and Mo with outstanding strength, toughness, and shock resistance. Resists thermal cracking under high loads, ideal for automotive shafts and safety buckles.",
+        specs: ["SCM415", "SCM420", "SCM435", "SCM440"],
         table: [
-          { key: "Available Thickness", val: "0.25mm ~ 2.00mm" },
-          { key: "Available Width", val: "8.0mm ~ 280.0mm" },
-          { key: "Quality Control", val: "Strict inclusion control, thickness tolerance ±0.005mm" },
-          { key: "Key Applications", val: "Needle roller bearings, guideway plates, robotics reducer parts" }
+          { key: "Available Thickness", val: "0.20mm ~ 2.50mm" },
+          { key: "Available Width", val: "8.0mm ~ 350.0mm" },
+          { key: "Heat Treatment", val: "Carburizing, Quenching & Tempering (QT)" },
+          { key: "Key Applications", val: "Drive shafts, seatbelt buckles, precision gears, high-load chains" }
         ]
       },
-      stainless: {
-        badge: "STAINLESS STEEL (201_07)",
-        title: "Austenitic / Martensitic Stainless Strip",
+      spring: {
+        badge: "SPRING STEEL (201_07)",
+        title: "Spring Steel Strip",
         img: "assets/images/201_07/01.jpg",
-        desc: "High corrosion resistance and brilliant surface luster with Cr and Ni alloy composition. Offers work-hardened spring steel (STS301 CSP) and heat-treatable martensitic grades (STS420J2).",
-        specs: ["SUS301 CSP", "SUS304", "SUS420J2", "SUS430"],
+        desc: "Silicon-manganese spring steel strip boasting high elastic limit and exceptional fatigue life. Returns to original shape without plastic deformation under cyclic bending and twisting.",
+        specs: ["SUP6", "SUP9", "SUP10"],
         table: [
-          { key: "Available Thickness", val: "0.05mm ~ 1.50mm (Ultra-thin foil capability)" },
+          { key: "Available Thickness", val: "0.15mm ~ 2.20mm" },
+          { key: "Available Width", val: "5.0mm ~ 320.0mm" },
+          { key: "Key Feature", val: "Ultra-low non-metallic inclusions, high fatigue limit" },
+          { key: "Key Applications", val: "Clutch diaphragm springs, valve springs, leaf springs, door locks" }
+        ]
+      },
+      sts: {
+        badge: "STAINLESS STEEL (201_08)",
+        title: "Precision Stainless Steel Strip",
+        img: "assets/images/201_08/01.jpg",
+        desc: "Precision cold-rolled stainless steel coil with high corrosion resistance and bright luster. Ultra-thin rolling capability supplies smartphone dome switches, micro-electronics, and medical devices.",
+        specs: ["STS301 CSP", "STS304", "STS420J2", "STS430"],
+        table: [
+          { key: "Available Thickness", val: "0.05mm ~ 1.50mm (Ultra-thin foil rolling)" },
           { key: "Available Width", val: "3.0mm ~ 400.0mm" },
           { key: "Temper Grade", val: "1/2H, 3/4H, Full Hard (FH), Extra Hard (EH)" },
-          { key: "Key Applications", val: "Smartphone camera springs, dome switches, wiper blade springs" }
-        ]
-      },
-      ribbon: {
-        badge: "HARDENED STRIP (201_08)",
-        title: "Hardened & Tempered Ribbon Strip Steel",
-        img: "assets/images/201_08/01.jpg",
-        desc: "DOSKO's flagship hardened steel strips processed through continuous oil/water quenching and tempering lines. Ready-to-use with outstanding straightness, flatness, high hardness, and resilient elasticity.",
-        specs: ["SK85 Q&T", "S60C Q&T", "S70C Q&T", "SK95 Q&T"],
-        table: [
-          { key: "Available Thickness", val: "0.15mm ~ 1.80mm" },
-          { key: "Available Width", val: "4.0mm ~ 300.0mm" },
-          { key: "Surface Color", val: "Blue Polished, Bright Polished (White), Golden Finish" },
-          { key: "Key Applications", val: "Measuring tapes, shutter springs, masonry trowels, special blades" }
+          { key: "Key Applications", val: "Smartphone dome switches, wiper blade springs, electronic connectors" }
         ]
       }
     }
@@ -1315,6 +1315,30 @@ function openProductDetail(gradeKey) {
         cert_title: "공인된 기술력과 품질 인증 & 특허 현황",
         cert_subtitle: "ISO 9001/14001 국제 표준 인증 및 독자적인 특수강 압연·열처리 기술 특허로 글로벌 경쟁력을 입증합니다.",
         btn_view_spec: "상세스펙 보기",
+        cert_tab_all: "전체보기",
+        cert_tab_iso: "품질·환경경영인증 (ISO)",
+        cert_tab_patent: "특허 및 기술인증",
+        cert_1_title: "품질경영시스템 인증",
+        cert_1_desc: "특수강 냉간압연 및 열처리 전 부문 공인 품질 인증",
+        cert_2_title: "환경경영시스템 인증",
+        cert_2_desc: "친환경 제조공정 및 자원순환 관리 체계 구축",
+        cert_3_title: "기술혁신형 중소기업",
+        cert_3_desc: "중소벤처기업부 주관 INNO-BIZ 기술인증 획득",
+        cert_4_title: "기업부설연구소 인정",
+        cert_4_desc: "한국산업기술진흥협회(KOITA) 특수강 기술연구소",
+        cert_5_title: "열처리 제조공법 특허증",
+        cert_5_desc: "특수마대강 연속 균일 열처리 특허 보유",
+        cert_6_title: "정밀 슬리팅 장치 특허",
+        cert_6_desc: "극박 코일 전단 시 버(Burr) 억제 슬리팅 특허",
+        cert_7_title: "부품소재전문기업 확인",
+        cert_7_desc: "산업통상자원부 핵심 금속소재 전문기업 공인",
+        cert_8_title: "우수 중소기업 공인 표창",
+        cert_8_desc: "지역경제 발전 및 정밀 특수강 수출 기여 표창",
+        modal_th_item: "항목",
+        modal_th_spec: "도스코 공급 사양",
+        modal_title_feature: "주요 특징 및 물성",
+        modal_std_spec: "대표 규격:",
+        modal_inquiry_btn: "이 강종으로 견적 문의하기",
 
         hero_badge: "특수강 냉간압연 전문기업",
         hero_title_1: "특수마대강 열처리 외길을 걸어온 도스코.",
@@ -1456,11 +1480,35 @@ function openProductDetail(gradeKey) {
         cert_title: "Certified Technology & Patents",
         cert_subtitle: "Proving global competitiveness with ISO 9001/14001 standards and proprietary cold rolling patents.",
         btn_view_spec: "View Specs",
+        cert_tab_all: "View All",
+        cert_tab_iso: "ISO 9001/14001",
+        cert_tab_patent: "Patents & Technology",
+        cert_1_title: "ISO 9001 Quality System",
+        cert_1_desc: "Certified for cold rolling & heat treatment operations",
+        cert_2_title: "ISO 14001 Environmental",
+        cert_2_desc: "Eco-friendly manufacturing & resource circulation system",
+        cert_3_title: "INNO-BIZ Certification",
+        cert_3_desc: "Ministry of SMEs and Startups Innovative Enterprise",
+        cert_4_title: "R&D Research Institute",
+        cert_4_desc: "KOITA Accredited Special Steel Technology R&D Center",
+        cert_5_title: "Heat Treatment Patent",
+        cert_5_desc: "Patented continuous uniform heat-treatment method",
+        cert_6_title: "Precision Slitting Patent",
+        cert_6_desc: "Patented burr-free slitting device for ultra-thin strip",
+        cert_7_title: "Materials & Parts Specialist",
+        cert_7_desc: "Accredited by Ministry of Trade, Industry & Energy",
+        cert_8_title: "Excellence Enterprise Award",
+        cert_8_desc: "Commended for export growth and steel industry contribution",
+        modal_th_item: "Technical Parameter",
+        modal_th_spec: "DOSKO Supply Specification",
+        modal_title_feature: "Key Characteristics & Properties",
+        modal_std_spec: "Standard Grades:",
+        modal_inquiry_btn: "Inquire About This Grade",
 
         hero_badge: "Cold Rolled Special Steel Leader",
-        hero_title_1: "DOSKO: Dedicated Leader in Heat-Treated Special Strip Steel",
-        hero_title_2: "Manufacturing High-Quality Heat-Treated Steel Products",
-        hero_title_3: "Advancing from Korea to the World with Ultra Precision",
+        hero_title_1: "DOSKO: Heat-Treated Special Strip Steel Specialist",
+        hero_title_2: "Producing Diverse High-Quality Heat-Treated Products",
+        hero_title_3: "Advancing Globally from Korea to the World",
         hero_desc: "Specialized in precision cold-rolled carbon steel, alloy steel, and stainless steel strip coils for automotive, electronics, and precision machinery.",
         hero_cta_product: "Explore Products",
         hero_cta_contact: "Inquiry: +82-31-493-3131",
