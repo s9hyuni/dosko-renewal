@@ -1683,8 +1683,8 @@ function openProductDetail(gradeKey) {
       const msgText = form.querySelector('textarea')?.value || '';
 
       const confirmMsg = currentLang === 'ko'
-        ? "문의 내용을 도스코 영업팀 이메일(dosko1@dosko.co.kr)로도 함께 전송하시겠습니까?"
-        : "Would you also like to open your email client to send this inquiry directly to DOSKO Sales Team (dosko1@dosko.co.kr)?";
+        ? "문의 내용을 도스코 영업팀 이메일(sales@dosko.co.kr)로도 함께 전송하시겠습니까?"
+        : "Would you also like to open your email client to send this inquiry directly to DOSKO Sales Team (sales@dosko.co.kr)?";
 
       const alertMsg = currentLang === 'ko'
         ? "상담 문의가 접수되었습니다. 영업 담당자가 신속히 검토 후 연락드리겠습니다."
@@ -1701,7 +1701,7 @@ function openProductDetail(gradeKey) {
 
 [문의 내용]
 ${msgText}`);
-        window.location.href = `mailto:dosko1@dosko.co.kr?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:sales@dosko.co.kr?subject=${subject}&body=${body}`;
       }
 
       form.reset();
